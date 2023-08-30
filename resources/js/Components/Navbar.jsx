@@ -3,7 +3,7 @@ import logo from "../images/Rumah Sakit 2.png";
 export function Navbar() {
     return (
         <>
-            <div className="navbar bg-navbar-color drop-shadow-md">
+            <div className="navbar bg-navbar-color fixed top-0 left-0 w-full bg-white drop-shadow-md z-10">
                 {/* container logo..... */}
                 <div className="flex-1">
                     <a className="btn btn-ghost normal-case text-xl">

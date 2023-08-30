@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::prefix('/proto')->group(function () {
+Route::prefix('/')->group(function () {
 
     Route::inertia('/', 'LandingPage');
 });
