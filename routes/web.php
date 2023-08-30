@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return 'Hello World';
+require __DIR__ . '/auth.php';
+
+Route::namespace('App\Http\Controllers')->group(function () {
+
+    // nanti dihapus
+    Route::get('logout', 'Auth\AuthenticatedSessionController@destroy')->name('logout');
+
+    Route::get('/', 'HomeController@index')->name('home');
+    Route::post('/', 'HomeController@store')->name('feedback.store');
 });
