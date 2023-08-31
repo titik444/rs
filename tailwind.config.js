@@ -14,6 +14,11 @@ export default {
         extend: {
             fontFamily: {
                 sans: ["Figtree", ...defaultTheme.fontFamily.sans],
+                montserrat: ["Montserrat", "sans-serif"],
+                roboto: ["Roboto", "sans-serif"],
+            },
+            colors: {
+                "base-color": "#C5E3FF",
             },
         },
     },
