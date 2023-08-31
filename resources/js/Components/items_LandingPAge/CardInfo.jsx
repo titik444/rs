@@ -1,5 +1,4 @@
 import React from "react";
-import logo1 from "../images/logo1.png";
 
 function CardInfo({ logo, title, text }) {
     return (

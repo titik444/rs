@@ -1,10 +1,10 @@
 import React from "react";
-
+import Modal from "@/Components/items_LandingPAge/Modal_Login";
 export default function Jumbotron({ backgroundImage }) {
     const jumbotronStyle = {
         backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: "cover", // Atur sesuai kebutuhan
-        backgroundPosition: "center", // Atur sesuai kebutuhan
+        backgroundSize: "cover",
+        backgroundPosition: "center",
     };
 
     return (
@@ -23,7 +23,12 @@ export default function Jumbotron({ backgroundImage }) {
                     </h2>
                 </div>
                 {/* jumbotron button  */}
-                <button className="bg-[#1279FF] hover:active:bg-[#273b55] active:bg-[#273b55] w-24 h-9 mt-3.5 text-white rounded-md border-none font-extrabold drop-shadow-xl ">
+                <button
+                    onClick={() => {
+                        window.modal_login.showModal();
+                    }}
+                    className="bg-[#1279FF] hover:active:bg-[#273b55] active:bg-[#273b55] w-24 h-9 mt-3.5 text-white rounded-md border-none font-extrabold drop-shadow-xl "
+                >
                     Login
                 </button>
             </div>

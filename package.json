@@ -21,6 +21,8 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
+        "react-slick": "^0.29.0",
+        "slick-carousel": "^1.8.1",
         "typeface-montserrat": "^1.1.13",
         "typeface-roboto": "^1.1.13"
     }
