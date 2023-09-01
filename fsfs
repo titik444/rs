@@ -1,0 +1,50 @@
+[33mcommit edab24a1df85b2d9a9bd3f8b0b5e8d7b3da6f72e[m[33m ([m[1;36mHEAD -> [m[1;32mFront-End[m[33m)[m
+Author: ilham Suryana <szuryanailham090102@gmail.com>
+Date:   Fri Sep 1 17:28:15 2023 +0700
+
+    menyelesaikan halaman Sign up
+
+[33mcommit bcc178dff8e85125a3f923545cc1ec6aa3a290dd[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: ilham Suryana <szuryanailham090102@gmail.com>
+Date:   Thu Aug 31 22:14:36 2023 +0700
+
+    menyelesaikan landing page dan menambahkan fiture modal login
+
+[33mcommit 5ca4819c902abc98913d694c98e93caff1d849cb[m
+Author: ilham Suryana <szuryanailham090102@gmail.com>
+Date:   Wed Aug 30 13:41:56 2023 +0700
+
+    menyelesaikan bagian jumbotron , membuat card informasi , dan membuat efek navbar menjadi fixed
+
+[33mcommit c49bc3f97e80a445cc91f883af3b386cd8c3e4c5[m
+Author: titik444 <35260719+titik444@users.noreply.github.com>
+Date:   Tue Aug 29 22:54:49 2023 +0700
+
+    add: migration, seeder & models
+
+[33mcommit 12751dbba524b71c034df737fbd56e427d3a4efb[m
+Author: titik444 <35260719+titik444@users.noreply.github.com>
+Date:   Tue Aug 29 22:23:39 2023 +0700
+
+    fix: web.php
+
+[33mcommit dd4a7f4c3f98af1c42bda8dbed84376c09d3e772[m
+Merge: 5f59564 4bdc342
+Author: titik444 <35260719+titik444@users.noreply.github.com>
+Date:   Tue Aug 29 22:02:33 2023 +0700
+
+    Merge pull request #1 from szuryanailham/main
+    
+    step membuat bagian landing page dengan bantui daisy ui untuk membuat…
+
+[33mcommit 4bdc342d4e1fb1dc16a0fcf0862ddd04a4bf1764[m
+Author: ilham Suryana <szuryanailham090102@gmail.com>
+Date:   Tue Aug 29 21:25:01 2023 +0700
+
+    step membuat bagian landing page dengan bantui daisy ui untuk membuat navbar dan jumbtorn image
+
+[33mcommit 5f59564ca9e80289debaacde6dc06062acc8a4ac[m[33m ([m[1;31mtitik/main[m[33m)[m
+Author: titik444 <35260719+titik444@users.noreply.github.com>
+Date:   Thu Aug 17 16:22:01 2023 +0700
+
+    first commit

@@ -1,12 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
 function Form_Guess() {
-    const [selectedValue, setSelectedValue] = useState("");
-
-    const handleSelectChange = (e) => {
-        setSelectedValue(e.target.value);
-    };
-
     return (
         <>
             <div className="container bg-base-color w-full h-auto p-5 mt-5">
@@ -14,47 +8,69 @@ function Form_Guess() {
                     Feedback Form
                 </h1>
                 <form action="">
-                    {/* Input your name */}
+                    {/* input your name ...... */}
                     <input
                         type="text"
                         placeholder="Your name ......"
                         className="input input-ghost bg-white w-full h-10"
                     />
-                    {/* Input your email */}
+                    {/* input your email ...... */}
                     <input
                         type="email"
                         placeholder="Your Email ......"
                         className="input input-ghost bg-white w-full h-10 mt-3"
                     />
-                    {/* Input category comment */}
-                    <select
-                        value={selectedValue}
-                        onChange={handleSelectChange}
-                        className="select select-ghost bg-white w-full h-10 mt-3"
-                    >
-                        <option value="" disabled>
+                    {/* input chategory comment */}
+                    <select className="select select-ghost bg-white w-full h-10 mt-3">
+                        <option disabled selected>
                             Choose Category
                         </option>
-                        <option value="Service">Service</option>
-                        <option value="Proficiency">Proficiency</option>
-                        <option value="Cleanliness">Cleanliness</option>
+                        <option>Service</option>
+                        <option>proficiency</option>
+                        <option>cleanliness</option>
                     </select>
-                    {/* Give Rating */}
+                    {/* give Rating */}
                     <div className="flex justify-evenly mt-2">
                         <h1 className="font-thin italic text-sm font-montserrat mt-2">
                             Give us Rating :
                         </h1>
                         <div className="rating rating-md mt-1 ">
-                            {/* Input radio elements for rating */}
+                            <input
+                                type="radio"
+                                name="rating-7"
+                                className="mask mask-star-2 bg-orange-400"
+                            />
+                            <input
+                                type="radio"
+                                name="rating-7"
+                                className="mask mask-star-2 bg-orange-400"
+                                checked
+                            />
+                            <input
+                                type="radio"
+                                name="rating-7"
+                                className="mask mask-star-2 bg-orange-400"
+                            />
+                            <input
+                                type="radio"
+                                name="rating-7"
+                                className="mask mask-star-2 bg-orange-400"
+                            />
+                            <input
+                                type="radio"
+                                name="rating-7"
+                                className="mask mask-star-2 bg-orange-400"
+                            />
                         </div>
                     </div>
-                    {/* Give the Comment */}
+                    {/* give the Comment  */}
+                    {/* lg */}
                     <textarea
                         placeholder="Bio"
-                        className="textarea textarea-bordered textarea-lg w-full h-40 mt-3"
+                        className="textarea textarea-bordered textarea-lg w-full h-40 mt-3 "
                     ></textarea>
-                    {/* Submit button */}
-                    <div className="w-full mt-5 flex">
+                    {/* button submit  */}
+                    <div className="w-full  b mt-5 flex ">
                         <input
                             type="submit"
                             value="Submit"
