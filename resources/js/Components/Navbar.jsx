@@ -13,13 +13,13 @@ export function Navbar() {
                         </div>
                     </a>
                 </div>
-                <div class="flex-none">
-                    <button class="btn btn-square btn-ghost">
+                <div className="flex-none">
+                    <button className="btn btn-square btn-ghost">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
-                            class="inline-block w-12 h-7 stroke-current"
+                            className="inline-block w-12 h-7 stroke-current"
                         >
                             <path
                                 strokeLinecap="round"

@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Form_Guess() {
+    const [selectedValue, setSelectedValue] = useState("default");
+
+    const handleSelectChange = (event) => {
+        setSelectedValue(event.target.value);
+    };
+
     return (
         <>
             <div className="container bg-base-color w-full h-auto p-5 mt-5">
@@ -20,14 +26,18 @@ function Form_Guess() {
                         placeholder="Your Email ......"
                         className="input input-ghost bg-white w-full h-10 mt-3"
                     />
-                    {/* input chategory comment */}
-                    <select className="select select-ghost bg-white w-full h-10 mt-3">
-                        <option disabled selected>
-                            Choose Category
+                    {/* input category comment */}
+                    <select
+                        className="select select-ghost bg-white w-full h-10 mt-3"
+                        value={selectedValue}
+                        onChange={handleSelectChange}
+                    >
+                        <option value="default" disabled>
+                            Choose an option
                         </option>
-                        <option>Service</option>
-                        <option>proficiency</option>
-                        <option>cleanliness</option>
+                        <option value="option1">Service</option>
+                        <option value="option2">Proficiency</option>
+                        <option value="option3">Cleanliness</option>
                     </select>
                     {/* give Rating */}
                     <div className="flex justify-evenly mt-2">
@@ -35,41 +45,28 @@ function Form_Guess() {
                             Give us Rating :
                         </h1>
                         <div className="rating rating-md mt-1 ">
-                            <input
-                                type="radio"
-                                name="rating-7"
-                                className="mask mask-star-2 bg-orange-400"
-                            />
-                            <input
-                                type="radio"
-                                name="rating-7"
-                                className="mask mask-star-2 bg-orange-400"
-                                checked
-                            />
-                            <input
-                                type="radio"
-                                name="rating-7"
-                                className="mask mask-star-2 bg-orange-400"
-                            />
-                            <input
-                                type="radio"
-                                name="rating-7"
-                                className="mask mask-star-2 bg-orange-400"
-                            />
-                            <input
-                                type="radio"
-                                name="rating-7"
-                                className="mask mask-star-2 bg-orange-400"
-                            />
+                            {[1, 2, 3, 4, 5].map((rating) => (
+                                <input
+                                    key={rating}
+                                    type="radio"
+                                    name="rating"
+                                    value={rating.toString()}
+                                    className="mask mask-star-2 bg-orange-400"
+                                    checked={
+                                        selectedValue === rating.toString()
+                                    }
+                                    onChange={handleSelectChange}
+                                />
+                            ))}
                         </div>
                     </div>
-                    {/* give the Comment  */}
+                    {/* give the Comment */}
                     {/* lg */}
                     <textarea
                         placeholder="Bio"
                         className="textarea textarea-bordered textarea-lg w-full h-40 mt-3 "
                     ></textarea>
-                    {/* button submit  */}
+                    {/* button submit */}
                     <div className="w-full  b mt-5 flex ">
                         <input
                             type="submit"
