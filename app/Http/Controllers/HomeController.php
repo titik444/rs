@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Feedback;
+
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -24,7 +25,7 @@ class HomeController extends Controller
         ]);
 
         if ($feedback) {
-            return redirect()->route('home');
+            return redirect()->route('home.index')->with('success', 'Thank you for your feedback!');
         }
 
         return abort(500);

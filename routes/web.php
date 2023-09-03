@@ -20,6 +20,13 @@ Route::namespace('App\Http\Controllers')->group(function () {
     // nanti dihapus
     Route::get('logout', 'Auth\AuthenticatedSessionController@destroy')->name('logout');
 
-    Route::get('/', 'HomeController@index')->name('home');
+    Route::get('/', 'HomeController@index')->name('home.index');
     Route::post('/', 'HomeController@store')->name('feedback.store');
-});
+
+    Route::get('/schedule', 'ScheduleController@index')->name('schedule.index');
+    Route::get('/schedule/{id}', 'ScheduleController@show')->name('schedule.show');
+
+    Route::get('/appointment/create/{id}', 'AppointmentController@create')->name('appointment.create');
+    Route::post('/appointment', 'AppointmentController@store')->name('appointment.store');
+    Route::get('/appointment/success', 'AppointmentController@success')->name('appointment.success');
+    });
