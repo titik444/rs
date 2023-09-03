@@ -63,6 +63,8 @@ export default function Create({ patient, schedule }) {
                     submit
                 </button>
             </form>
+
+            {Object.values(errors).length > 0 && Object.values(errors)[0]}
         </>
     );
 }

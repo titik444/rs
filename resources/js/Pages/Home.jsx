@@ -1,6 +1,6 @@
 import { useForm } from "@inertiajs/react";
 
-export default function Home() {
+export default function Home({ flashMessage }) {
     const { data, setData, post, processing, errors, reset } = useForm({
         name: "",
         email: "",
@@ -12,7 +12,10 @@ export default function Home() {
     const submit = (e) => {
         e.preventDefault();
 
-        post(route("feedback.store"));
+        post(route("feedback.store"), {
+            preserveScroll: true,
+            preserveState: false,
+        });
     };
 
     return (
@@ -79,8 +82,14 @@ export default function Home() {
                     name="rating"
                 />
 
-                <button type="submit">submit</button>
+                <button type="submit" disabled={processing}>
+                    submit
+                </button>
             </form>
+
+            {Object.values(errors).length > 0 && Object.values(errors)[0]}
+
+            {flashMessage?.message && <h1>{flashMessage.message}</h1>}
         </>
     );
 }

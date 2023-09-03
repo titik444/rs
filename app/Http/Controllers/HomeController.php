@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\FeedbackStoreRequest;
+
 use App\Models\Feedback;
 
-use Illuminate\Http\Request;
 use Inertia\Inertia;
 
 class HomeController extends Controller
@@ -14,7 +15,7 @@ class HomeController extends Controller
         return Inertia::render('Home');
     }
 
-    public function store(Request $request)
+    public function store(FeedbackStoreRequest $request)
     {
         $feedback = Feedback::create([
             'name' => $request->name,
@@ -25,7 +26,12 @@ class HomeController extends Controller
         ]);
 
         if ($feedback) {
-            return redirect()->route('home.index')->with('success', 'Thank you for your feedback!');
+            return redirect()->route('home.index')->with(
+                [
+                    'message' => 'Thank you for your feedback!',
+                    'type' => 'success'
+                ]
+            );
         }
 
         return abort(500);

@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AppointmentStoreRequest;
+
 use App\Models\Appointment;
 use App\Models\Patient;
 use App\Models\DoctorSchedule;
 
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Http\Request;
 use Inertia\Inertia;
 
 class AppointmentController extends Controller
@@ -24,7 +25,7 @@ class AppointmentController extends Controller
         ]);
     }
 
-    public function store(Request $request)
+    public function store(AppointmentStoreRequest $request)
     {
         $appointment = Appointment::create([
             'patient_id' => $request->patient_id,
