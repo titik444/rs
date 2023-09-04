@@ -15,7 +15,7 @@ function SignUp_Form() {
                 <div className=" bg-white rounded-lg shadow md:mt-0 xl:p-0 w-[90%] h-auto mt-5">
                     <div className="p-4 space-y-4 md:space-y-6 sm:p-8">
                         <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white text-center p-2">
-                            register and create
+                            Register and Create
                         </h1>
                         <form className="space-y-4 md:space-y-6" action="#">
                             <div>
@@ -117,10 +117,10 @@ function SignUp_Form() {
                                     htmlFor="password_verifcation"
                                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                                 >
-                                    Create Password
+                                    password verifcation
                                 </label>
                                 <input
-                                    type="password_verifcation"
+                                    type="password"
                                     name="password_verifcation"
                                     id="password_verifcation"
                                     placeholder="password_verifcation ....."
@@ -169,7 +169,7 @@ function SignUp_Form() {
                             <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                                 Already have an account?{" "}
                                 <a
-                                    href="#"
+                                    href="/"
                                     className="font-medium text-primary-600 hover:underline dark:text-primary-500"
                                 >
                                     Login here
