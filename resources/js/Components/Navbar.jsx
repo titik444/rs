@@ -3,30 +3,50 @@ import logo from "../images/Rumah Sakit 2.png";
 import { FiSearch } from "react-icons/fi";
 import { AiFillHome } from "react-icons/ai";
 import { FaBriefcaseMedical } from "react-icons/fa";
-import { AiTwotoneSetting } from "react-icons/ai";
 import { AiFillInfoCircle } from "react-icons/ai";
 import { BsTranslate, BsFillChatSquareDotsFill } from "react-icons/bs";
 
 export function Navbar() {
-    // logic sidebar effect :
-    // baut varable boolean , sidebarAktif
     const [sidebarAktif, setSidebarAktif] = useState(false);
     const sidebarRef = useRef(null);
+    const humbergerRef = useRef(null);
+
     const handleClick = () => {
         setSidebarAktif(true);
     };
+
     useEffect(() => {
-        console.log(sidebarAktif);
-        if (sidebarAktif) {
-            // ambil element DOM dengan useRef
-            const sidebar = sidebarRef.current;
-            // tambhkan class "sidebar-active" didalam sidebar ref
-            sidebar.classList.add("sidebar-active");
-            // ketika sidebarAktif true maka add classlist efect
+        const sidebar = sidebarRef.current;
+        const items_Sidebar = sidebar.querySelectorAll("*");
+        items_Sidebar.forEach((element) => {
+            element.id = "sidebar";
+        });
+    }, []);
+
+    const targetCursor = (e) => {
+        if (e.target.id !== "hamburger" && e.target.id !== "sidebar") {
+            setSidebarAktif(false);
         }
+    };
+
+    useEffect(() => {
+        const sidebar = sidebarRef.current;
+
+        if (sidebarAktif) {
+            sidebar.classList.add("sidebar-active");
+        } else {
+            sidebar.classList.remove("sidebar-active");
+        }
+
+        // Tambahkan event listener untuk setiap klik di dokumen
+        document.addEventListener("click", targetCursor);
+
+        // Cleanup event listener saat komponen di-unmount
+        return () => {
+            document.removeEventListener("click", targetCursor);
+        };
     }, [sidebarAktif]);
-    //  mengembalikan sidebarActif menjadi false ;
-    // ketika menyentuh selain sidebararea , dan humberge
+
     return (
         <>
             <nav
@@ -123,14 +143,16 @@ export function Navbar() {
                     </a>
                 </div>
                 <div id="hamburger" onClick={handleClick} className="flex-none">
-                    <button className="btn btn-square btn-ghost">
+                    <button id="hamburger" className="btn btn-square btn-ghost">
                         <svg
+                            id="hamburger"
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
                             className="inline-block w-12 h-7 stroke-current"
                         >
                             <path
+                                id="hamburger"
                                 strokeLinecap="round"
                                 strokeLinejoin="round"
                                 strokeWidth="3"
