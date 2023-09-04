@@ -85,7 +85,7 @@ function Modal_Login() {
                         <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                             Don’t have an account yet?{" "}
                             <a
-                                href="#"
+                                href="/SignUp"
                                 className="font-medium text-primary-600 hover:underline hover:text-red-400 dark:text-primary-500"
                             >
                                 Sign up

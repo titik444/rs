@@ -6,3 +6,9 @@ Route::prefix('/')->group(function () {
 
     Route::inertia('/', 'LandingPage');
 });
+
+
+Route::prefix('/')->group(function () {
+
+    Route::inertia('/SignUp', 'SignUpPage');
+});
