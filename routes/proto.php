@@ -12,3 +12,8 @@ Route::prefix('/')->group(function () {
 
     Route::inertia('/SignUp', 'SignUpPage');
 });
+
+Route::prefix('/')->group(function () {
+
+    Route::inertia('/Dasboard_Page', 'Dasboard_Page');
+});
