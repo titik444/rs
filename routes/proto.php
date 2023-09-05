@@ -4,16 +4,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('/proto')->group(function () {
 
-    Route::inertia('/', 'LandingPage');
-});
+    // http://127.0.0.1:8000/proto/
+    Route::inertia('/', 'Prototype/LandingPage');
 
+    // http://127.0.0.1:8000/proto/SignUp
+    Route::inertia('/SignUp', 'Prototype/SignUpPage');
 
-Route::prefix('/')->group(function () {
-
-    Route::inertia('/SignUp', 'SignUpPage');
-});
-
-Route::prefix('/')->group(function () {
-
-    Route::inertia('/Dasboard_Page', 'Dasboard_Page');
+    // http://127.0.0.1:8000/proto/Dasboard_Page
+    Route::inertia('/Dasboard_Page', 'Prototype/Dasboard_Page');
 });

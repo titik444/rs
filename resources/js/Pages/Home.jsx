@@ -1,95 +1,92 @@
-import { useForm } from "@inertiajs/react";
+import Navbar from "@/Components/Navbar";
+import Jumbotron from "@/Components/Jumbotron";
+import WhyChooseUs from "@/Components/WhyChooseUs";
+import About_Us from "@/Components/About_Us";
+import DoctorPage from "@/Components/Professional_Doctor";
+import RatingPage from "@/Components/RatingPage";
+import Form_Guess from "@/Components/Form_Guess";
+import Footer from "@/Components/Footer";
+import backgroundJumbotron from "@/images/backgroundJumbotron.png";
+import Modal from "@/Components/items_LandingPAge/Modal_Login";
+import { useForm, usePage } from "@inertiajs/react";
+import { useEffect } from "react";
 
 export default function Home({ flashMessage }) {
-    const { data, setData, post, processing, errors, reset } = useForm({
+    const { auth } = usePage().props;
+
+    useEffect(() => {
+        // show modal if not login
+        auth.user ||
+            setTimeout(() => {
+                window.modal_login.showModal();
+            }, 2500);
+    }, []);
+
+    // FORM LOGIN
+    const formLogin = useForm({
+        email: "",
+        password: "",
+        remember: false,
+    });
+
+    useEffect(() => {
+        return () => {
+            formLogin.reset("password");
+        };
+    }, []);
+
+    const onHandleSubmitLogin = (e) => {
+        e.preventDefault();
+
+        formLogin.post(route("login"));
+    };
+
+    const onHandleChangeLogin = (event) => {
+        formLogin.setData(event.target.name, event.target.value);
+    };
+
+    // FORM FEEDBACK
+    const formFeedback = useForm({
         name: "",
         email: "",
         category: "",
         message: "",
-        rating: 1,
+        rating: 5,
     });
 
-    const submit = (e) => {
+    const onHandleSubmitFeedback = (e) => {
         e.preventDefault();
 
-        post(route("feedback.store"), {
+        formFeedback.post(route("feedback.store"), {
             preserveScroll: true,
-            preserveState: false,
+            onSuccess: () => formFeedback.reset("name", "email", "category", "message"),
         });
+    };
+
+    const onHandleChangeFeedback = (event) => {
+        formFeedback.setData(event.target.name, event.target.value);
     };
 
     return (
         <>
-            <form onSubmit={submit}>
-                <input
-                    type="text"
-                    value={data.name}
-                    onChange={(e) => setData("name", e.target.value)}
-                />
-                <input
-                    type="email"
-                    value={data.email}
-                    onChange={(e) => setData("email", e.target.value)}
-                />
-                <select
-                    value={data.category}
-                    onChange={(e) => setData("category", e.target.value)}
-                >
-                    <option value={"Kebersihan"}>Kebersihan</option>
-                    <option value={"Waktu Tunggu"}>Waktu Tunggu</option>
-                    <option value={"Kualitas Pelayanan"}>
-                        Kualitas Pelayanan
-                    </option>
-                    <option value={"Pendaftaran dan Administrasi"}>
-                        Pendaftaran dan Administrasi
-                    </option>
-                    <option value={"Lainnya"}>Lainnya</option>
-                </select>
-                <textarea
-                    value={data.message}
-                    onChange={(e) => setData("message", e.target.value)}
-                />
-
-                <input
-                    onChange={(e) => setData("rating", e.target.value)}
-                    type="radio"
-                    value="1"
-                    name="rating"
-                    defaultChecked={true}
-                />
-                <input
-                    onChange={(e) => setData("rating", e.target.value)}
-                    type="radio"
-                    value="2"
-                    name="rating"
-                />
-                <input
-                    onChange={(e) => setData("rating", e.target.value)}
-                    type="radio"
-                    value="3"
-                    name="rating"
-                />
-                <input
-                    onChange={(e) => setData("rating", e.target.value)}
-                    type="radio"
-                    value="4"
-                    name="rating"
-                />
-                <input
-                    onChange={(e) => setData("rating", e.target.value)}
-                    type="radio"
-                    value="5"
-                    name="rating"
-                />
-
-                <button type="submit" disabled={processing}>
-                    submit
-                </button>
-            </form>
-
-            {Object.values(errors).length > 0 && Object.values(errors)[0]}
-
-            {flashMessage?.message && <h1>{flashMessage.message}</h1>}
+            <Navbar />
+            <Jumbotron backgroundImage={backgroundJumbotron} />
+            <WhyChooseUs />
+            <About_Us />
+            <DoctorPage />
+            <RatingPage />
+            <Form_Guess
+                form={formFeedback}
+                submit={onHandleSubmitFeedback}
+                handleChange={onHandleChangeFeedback}
+                flashMessage={flashMessage}
+            />
+            <Footer />
+            <Modal
+                form={formLogin}
+                submit={onHandleSubmitLogin}
+                handleChange={onHandleChangeLogin}
+            />
         </>
     );
 }
