@@ -1,7 +1,29 @@
-import { Link } from "@inertiajs/react";
-import React from "react";
+import { Link, useForm } from "@inertiajs/react";
+import React, { useEffect } from "react";
 
-function Modal_Login({ form, submit, handleChange }) {
+function Modal_Login() {
+    const { data, setData, post, processing, errors, reset } = useForm({
+        email: "",
+        password: "",
+        remember: false,
+    });
+
+    useEffect(() => {
+        return () => {
+            reset("password");
+        };
+    }, []);
+
+    const submit = (e) => {
+        e.preventDefault();
+
+        post(route("login"));
+    };
+
+    const HandleChange = (event) => {
+        setData(event.target.name, event.target.value);
+    };
+
     return (
         <>
             {/* modal login  */}
@@ -12,9 +34,9 @@ function Modal_Login({ form, submit, handleChange }) {
                     onSubmit={submit}
                 >
                     {/* close button modal */}
-                    <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+                    <Link className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
                         ✕
-                    </button>
+                    </Link>
                     {/* body modal  */}
 
                     <div>
@@ -27,12 +49,12 @@ function Modal_Login({ form, submit, handleChange }) {
                         <input
                             type="email"
                             name="email"
-                            value={form.email}
+                            value={data.email}
                             id="email"
                             className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             placeholder="Your@email.com..."
                             required=""
-                            onChange={(e) => handleChange(e)}
+                            onChange={(e) => HandleChange(e)}
                         />
                     </div>
                     <div>
@@ -45,12 +67,12 @@ function Modal_Login({ form, submit, handleChange }) {
                         <input
                             type="password"
                             name="password"
-                            value={form.password}
+                            value={data.password}
                             id="password"
                             placeholder="••••••••"
                             className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             required=""
-                            onChange={(e) => handleChange(e)}
+                            onChange={(e) => HandleChange(e)}
                         />
                     </div>
                     <div className="flex items-center justify-between">
@@ -59,12 +81,12 @@ function Modal_Login({ form, submit, handleChange }) {
                                 <input
                                     id="remember"
                                     name="remember"
-                                    value={form.remember}
+                                    value={data.remember}
                                     aria-describedby="remember"
                                     type="checkbox"
                                     className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
                                     required=""
-                                    onChange={(e) => handleChange(e)}
+                                    onChange={(e) => HandleChange(e)}
                                 />
                             </div>
                             <div className="ml-3 text-sm">
@@ -88,7 +110,7 @@ function Modal_Login({ form, submit, handleChange }) {
                         <button
                             type="submit"
                             className="btn text-white bg-[#1279FF] mx-auto btn-active "
-                            disabled={form.processing}
+                            disabled={processing}
                         >
                             Log In
                         </button>
@@ -104,8 +126,8 @@ function Modal_Login({ form, submit, handleChange }) {
                     </p>
 
                     {/* pesan error */}
-                    {Object.values(form.errors).length > 0 &&
-                        Object.values(form.errors)[0]}
+                    {Object.values(errors).length > 0 &&
+                        Object.values(errors)[0]}
                 </form>
             </dialog>
         </>

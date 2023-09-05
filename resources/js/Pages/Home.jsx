@@ -8,7 +8,7 @@ import Form_Guess from "@/Components/Form_Guess";
 import Footer from "@/Components/Footer";
 import backgroundJumbotron from "@/images/backgroundJumbotron.png";
 import Modal from "@/Components/items_LandingPAge/Modal_Login";
-import { useForm, usePage } from "@inertiajs/react";
+import { usePage } from "@inertiajs/react";
 import { useEffect } from "react";
 
 export default function Home({ flashMessage }) {
@@ -22,51 +22,6 @@ export default function Home({ flashMessage }) {
             }, 2500);
     }, []);
 
-    // FORM LOGIN
-    const formLogin = useForm({
-        email: "",
-        password: "",
-        remember: false,
-    });
-
-    useEffect(() => {
-        return () => {
-            formLogin.reset("password");
-        };
-    }, []);
-
-    const onHandleSubmitLogin = (e) => {
-        e.preventDefault();
-
-        formLogin.post(route("login"));
-    };
-
-    const onHandleChangeLogin = (event) => {
-        formLogin.setData(event.target.name, event.target.value);
-    };
-
-    // FORM FEEDBACK
-    const formFeedback = useForm({
-        name: "",
-        email: "",
-        category: "",
-        message: "",
-        rating: 5,
-    });
-
-    const onHandleSubmitFeedback = (e) => {
-        e.preventDefault();
-
-        formFeedback.post(route("feedback.store"), {
-            preserveScroll: true,
-            onSuccess: () => formFeedback.reset("name", "email", "category", "message"),
-        });
-    };
-
-    const onHandleChangeFeedback = (event) => {
-        formFeedback.setData(event.target.name, event.target.value);
-    };
-
     return (
         <>
             <Navbar />
@@ -75,18 +30,9 @@ export default function Home({ flashMessage }) {
             <About_Us />
             <DoctorPage />
             <RatingPage />
-            <Form_Guess
-                form={formFeedback}
-                submit={onHandleSubmitFeedback}
-                handleChange={onHandleChangeFeedback}
-                flashMessage={flashMessage}
-            />
+            <Form_Guess />
             <Footer />
-            <Modal
-                form={formLogin}
-                submit={onHandleSubmitLogin}
-                handleChange={onHandleChangeLogin}
-            />
+            <Modal />
         </>
     );
 }

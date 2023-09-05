@@ -1,3 +1,4 @@
+import SignUp_Form from "@/Components/SIgn_Up_Element/SignUp_Form";
 import { useForm } from "@inertiajs/react";
 import { useEffect } from "react";
 
@@ -5,15 +6,15 @@ export default function Register() {
     const { data, setData, post, processing, errors, reset } = useForm({
         name: "",
         email: "",
+        nik: "",
         password: "",
+        password_confirmation: "",
         phone: "",
-        date_of_birth: "",
-        address: "",
     });
 
     useEffect(() => {
         return () => {
-            reset("password");
+            reset("password", "password_confirmation");
         };
     }, []);
 
@@ -23,50 +24,19 @@ export default function Register() {
         post(route("register"));
     };
 
+    const onHandleChange = (event) => {
+        setData(event.target.name, event.target.value);
+    };
+
     return (
         <>
-            <form onSubmit={submit}>
-                <input
-                    type="text"
-                    value={data.name}
-                    onChange={(e) => setData("name", e.target.value)}
-                />
-                <input
-                    type="text"
-                    value={data.nik}
-                    onChange={(e) => setData("nik", e.target.value)}
-                />
-                <input
-                    type="email"
-                    value={data.email}
-                    onChange={(e) => setData("email", e.target.value)}
-                />
-                <input
-                    type="password"
-                    value={data.password}
-                    onChange={(e) => setData("password", e.target.value)}
-                />
-                <input
-                    type="text"
-                    value={data.phone}
-                    onChange={(e) => setData("phone", e.target.value)}
-                />
-                <input
-                    type="date"
-                    value={data.date_of_birth}
-                    onChange={(e) => setData("date_of_birth", e.target.value)}
-                />
-                <textarea
-                    value={data.address}
-                    onChange={(e) => setData("address", e.target.value)}
-                />
-
-                <button type="submit" disabled={processing}>
-                    submit
-                </button>
-            </form>
-
-            {Object.values(errors).length > 0 && Object.values(errors)[0]}
+            <SignUp_Form
+                data={data}
+                errors={errors}
+                submit={submit}
+                handleChange={onHandleChange}
+                processing={processing}
+            />
         </>
     );
 }

@@ -15,8 +15,6 @@ class Patient extends Model
         'user_id',
         'nik',
         'phone',
-        'date_of_birth',
-        'address',
     ];
 
     public function user()

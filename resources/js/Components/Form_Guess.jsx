@@ -1,17 +1,52 @@
-function Form_Guess({ form, submit, handleChange, flashMessage }) {
+import { useForm } from "@inertiajs/react";
+import { useState } from "react";
+
+function Form_Guess({ flashMessage }) {
+    const form = useForm({
+        name: "",
+        email: "",
+        category: "",
+        message: "",
+        rating: 5,
+    });
+
+    const [data, setData] = useState({});
+
+    const onHandleSubmit = (e) => {
+        e.preventDefault();
+
+        form.post(route("feedback.store"), {
+            preserveScroll: true,
+            onSuccess: () => {
+                form.reset("name", "email", "category", "message"),
+                    setData({
+                        name: "",
+                        email: "",
+                        category: "default",
+                        message: "",
+                    });
+            },
+        });
+    };
+
+    const onHandleChange = (event) => {
+        setData({ ...data, [event.target.name]: event.target.value });
+        form.setData(event.target.name, event.target.value);
+    };
+
     return (
         <>
             <div className="container bg-base-color w-full h-auto p-5 mt-5">
                 <h1 className="text-lg font-bold p-2 text-center mb-3">
                     Feedback Form
                 </h1>
-                <form onSubmit={submit}>
+                <form onSubmit={onHandleSubmit}>
                     {/* input your name ...... */}
                     <input
                         type="text"
                         name="name"
-                        value={form.name}
-                        onChange={(e) => handleChange(e)}
+                        value={data.name}
+                        onChange={(e) => onHandleChange(e)}
                         placeholder="Your name ......"
                         className="input input-ghost bg-white w-full h-10"
                     />
@@ -19,16 +54,16 @@ function Form_Guess({ form, submit, handleChange, flashMessage }) {
                     <input
                         type="email"
                         name="email"
-                        value={form.email}
-                        onChange={(e) => handleChange(e)}
+                        value={data.email}
+                        onChange={(e) => onHandleChange(e)}
                         placeholder="Your Email ......"
                         className="input input-ghost bg-white w-full h-10 mt-3"
                     />
                     {/* input category comment */}
                     <select
                         name="category"
-                        value={form.category}
-                        onChange={(e) => handleChange(e)}
+                        value={data.category}
+                        onChange={(e) => onHandleChange(e)}
                         className="select select-ghost bg-white w-full h-10 mt-3"
                         defaultValue={"default"}
                     >
@@ -52,8 +87,10 @@ function Form_Guess({ form, submit, handleChange, flashMessage }) {
                                     name="rating"
                                     value={rating.toString()}
                                     className="mask mask-star-2 bg-orange-400"
-                                    checked={form.rating === rating.toString()}
-                                    onChange={(e) => handleChange(e)}
+                                    defaultChecked={
+                                        data.rating === rating.toString()
+                                    }
+                                    onChange={(e) => onHandleChange(e)}
                                 />
                             ))}
                         </div>
@@ -62,8 +99,8 @@ function Form_Guess({ form, submit, handleChange, flashMessage }) {
                     {/* lg */}
                     <textarea
                         name="message"
-                        value={form.message}
-                        onChange={(e) => handleChange(e)}
+                        value={data.message}
+                        onChange={(e) => onHandleChange(e)}
                         placeholder="Bio"
                         className="textarea textarea-bordered textarea-lg w-full h-40 mt-3 "
                     ></textarea>

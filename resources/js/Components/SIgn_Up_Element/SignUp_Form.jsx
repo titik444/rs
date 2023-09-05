@@ -1,6 +1,7 @@
 import logo from "@/images/Rumah Sakit 2.png";
+import { Link } from "@inertiajs/react";
 
-function SignUp_Form() {
+function SignUp_Form({ data, errors, submit, handleChange, processing }) {
     return (
         <>
             <div className="flex flex-col items-center justify-center">
@@ -17,21 +18,26 @@ function SignUp_Form() {
                         <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white text-center p-2">
                             Register and Create
                         </h1>
-                        <form className="space-y-4 md:space-y-6" action="#">
+                        <form
+                            className="space-y-4 md:space-y-6"
+                            onSubmit={submit}
+                        >
                             <div>
-                                {/* Username ...... */}
+                                {/* Name ...... */}
                                 <label
-                                    htmlFor="username"
+                                    htmlFor="name"
                                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                                 >
-                                    Username.....
+                                    Name.....
                                 </label>
                                 <input
                                     type="text"
-                                    name="username"
-                                    id="username "
+                                    name="name"
+                                    value={data.name}
+                                    onChange={(e) => handleChange(e)}
+                                    id="name "
                                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                    placeholder="Username ........"
+                                    placeholder="Name ........"
                                     required=""
                                 />
                             </div>
@@ -48,6 +54,8 @@ function SignUp_Form() {
                                 <input
                                     type="email"
                                     name="email"
+                                    value={data.email}
+                                    onChange={(e) => handleChange(e)}
                                     id="email"
                                     placeholder="your Email ......"
                                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -66,7 +74,9 @@ function SignUp_Form() {
                                 </label>
                                 <input
                                     type="text"
-                                    name="NIK"
+                                    name="nik"
+                                    value={data.nik}
+                                    onChange={(e) => handleChange(e)}
                                     id="NIK"
                                     placeholder="NIK number ......."
                                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -77,15 +87,17 @@ function SignUp_Form() {
                             {/* NO hp ...... */}
                             <div>
                                 <label
-                                    htmlFor="no_telephone"
+                                    htmlFor="phone"
                                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                                 >
                                     Number Phone ......
                                 </label>
                                 <input
                                     type="text"
-                                    name="no_telephone"
-                                    id="no_telephone"
+                                    name="phone"
+                                    value={data.phone}
+                                    onChange={(e) => handleChange(e)}
+                                    id="phone"
                                     placeholder=" No.telephone ....."
                                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                     required=""
@@ -104,6 +116,8 @@ function SignUp_Form() {
                                 <input
                                     type="password"
                                     name="password"
+                                    value={data.password}
+                                    onChange={(e) => handleChange(e)}
                                     id="password"
                                     placeholder="New Password ....."
                                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -114,16 +128,18 @@ function SignUp_Form() {
                             {/* veririfkasi password  */}
                             <div>
                                 <label
-                                    htmlFor="password_verifcation"
+                                    htmlFor="password_confirmation"
                                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                                 >
-                                    password verifcation
+                                    Password Confirmation
                                 </label>
                                 <input
                                     type="password"
-                                    name="password_verifcation"
-                                    id="password_verifcation"
-                                    placeholder="password_verifcation ....."
+                                    name="password_confirmation"
+                                    value={data.password_confirmation}
+                                    onChange={(e) => handleChange(e)}
+                                    id="password_confirmation"
+                                    placeholder="Password Confirmation ....."
                                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                     required=""
                                 />
@@ -161,6 +177,7 @@ function SignUp_Form() {
                                 <button
                                     type="submit"
                                     className="w-30 text-white focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-[#1279FF] "
+                                    disabled={processing}
                                 >
                                     Create an account
                                 </button>
@@ -168,13 +185,16 @@ function SignUp_Form() {
 
                             <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                                 Already have an account?{" "}
-                                <a
-                                    href="/"
+                                <Link
+                                    href={"/"}
                                     className="font-medium text-primary-600 hover:underline dark:text-primary-500"
                                 >
                                     Login here
-                                </a>
+                                </Link>
                             </p>
+
+                            {Object.values(errors).length > 0 &&
+                                Object.values(errors)[0]}
                         </form>
                     </div>
                 </div>

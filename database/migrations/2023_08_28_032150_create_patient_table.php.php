@@ -15,8 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('nik');
             $table->string('phone');
-            $table->date('date_of_birth');
-            $table->text('address');
             $table->timestamps();
             $table->softDeletes();
         });

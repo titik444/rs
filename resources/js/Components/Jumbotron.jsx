@@ -1,6 +1,9 @@
 import React from "react";
 import Modal from "@/Components/items_LandingPAge/Modal_Login";
+import { usePage } from "@inertiajs/react";
 export default function Jumbotron({ backgroundImage }) {
+    const { auth } = usePage().props;
+
     const jumbotronStyle = {
         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: "cover",
@@ -23,14 +26,18 @@ export default function Jumbotron({ backgroundImage }) {
                     </h2>
                 </div>
                 {/* jumbotron button  */}
-                <button
-                    onClick={() => {
-                        window.modal_login.showModal();
-                    }}
-                    className="bg-[#1279FF] hover:active:bg-[#273b55] active:bg-[#273b55] w-24 h-9 mt-3.5 text-white rounded-md border-none font-extrabold drop-shadow-xl "
-                >
-                    Login
-                </button>
+                {auth.user.id ? (
+                    <h1>WELCOME {auth.user.name}</h1>
+                ) : (
+                    <button
+                        onClick={() => {
+                            window.modal_login.showModal();
+                        }}
+                        className="bg-[#1279FF] hover:active:bg-[#273b55] active:bg-[#273b55] w-24 h-9 mt-3.5 text-white rounded-md border-none font-extrabold drop-shadow-xl "
+                    >
+                        Login
+                    </button>
+                )}
             </div>
         </div>
     );
