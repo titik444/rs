@@ -52,7 +52,7 @@ function NavbarForUser() {
             <nav
                 ref={sidebarRef}
                 id="sidebar"
-                className="w-52 h-auto rounded-md fixed top-5  bg-white z-20 p-3 -right-[250px]"
+                className="w-52 h-auto rounded-md fixed top-5 z-30  bg-white p-3 -right-[250px]"
             >
                 <ul className="block">
                     {/* item komponen ------ LI  */}
@@ -86,7 +86,11 @@ function NavbarForUser() {
                         </a>
                     </li>
                     {/* akhir  item komponen ------ LI  */}
-
+                    {/* judul container... */}
+                    <h1 className="text-lg font-bold p-2 text-center">
+                        About Us
+                    </h1>
+                    {/* item card specialist.....*/}
                     {/* item komponen ------ LI  */}
                     <li className="group  hover:scale-110">
                         <a

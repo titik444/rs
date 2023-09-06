@@ -1,6 +1,7 @@
 import NavbarForUser from "@/Components/DasbordUser_item/NavbarForUser";
 import Jumbotron from "@/Components/Jumbotron";
 import DasboradImage from "@/images/dasboard.png";
+import Specialist_Card from "@/Components/DasbordUser_item/Specialist_Card";
 function Dasboard_Page() {
     return (
         <>
@@ -13,6 +14,7 @@ function Dasboard_Page() {
                 backgroundImage={DasboradImage}
             />
             {/* card specialist */}
+            <Specialist_Card />
             {/* footer */}
         </>
     );
