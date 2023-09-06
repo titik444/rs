@@ -11,7 +11,7 @@ import Modal from "@/Components/items_LandingPAge/Modal_Login";
 import { usePage } from "@inertiajs/react";
 import { useEffect } from "react";
 
-export default function Home({ flashMessage }) {
+export default function Home() {
     const { auth } = usePage().props;
 
     useEffect(() => {

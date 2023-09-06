@@ -26,7 +26,7 @@ export default function Jumbotron({ backgroundImage }) {
                     </h2>
                 </div>
                 {/* jumbotron button  */}
-                {auth.user.id ? (
+                {auth?.user?.id ? (
                     <h1>WELCOME {auth.user.name}</h1>
                 ) : (
                     <button
