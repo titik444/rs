@@ -32,7 +32,7 @@ export default function Jumbotron({ backgroundImage, text1, text2, action }) {
                     </h2>
                 </div>
                 {/* jumbotron button  */}
-                {action === "login" ? (
+                {action === "login" && !auth.user ? (
                     <button
                         onClick={handleLoginClick}
                         className="bg-[#1279FF] hover:active:bg-[#273b55] active:bg-[#273b55] w-24 h-9 mt-3.5 text-white rounded-md border-none font-extrabold drop-shadow-xl "

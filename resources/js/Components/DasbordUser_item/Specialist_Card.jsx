@@ -1,12 +1,9 @@
 import React from "react";
 import imageCard from "@/images/specialist.png";
 import CardItem from "@/Components/DasbordUser_item/CardItem";
-import image1 from "@/images/specialist.png";
-import image2 from "@/images/specialist 2.png";
-import image3 from "@/images/specialist3.png";
-import image4 from "@/images/specialist4.png";
 import Footer from "../Footer";
-function Specialist_Card() {
+
+function Specialist_Card({ specialists }) {
     return (
         <>
             {/* container Card  */}
@@ -17,34 +14,16 @@ function Specialist_Card() {
                 </h1>
                 <div className="w-full h-auto bg-base-color p-2 z-0">
                     {/* item card specialist.....*/}
-                    <CardItem
-                        SpecialistName={"General Practitioner"}
-                        text={
-                            "Lorem Ipsum is simply dummy text of thtypesettin"
-                        }
-                        image={image1}
-                    />
-                    <CardItem
-                        SpecialistName={"Radiologist"}
-                        text={
-                            "Lorem Ipsum is simply dummy text of thtypesettin"
-                        }
-                        image={image2}
-                    />
-                    <CardItem
-                        SpecialistName={"Cardiologist"}
-                        text={
-                            "Lorem Ipsum is simply dummy text of thtypesettin"
-                        }
-                        image={image3}
-                    />
-                    <CardItem
-                        SpecialistName={"Dentist"}
-                        text={
-                            "Lorem Ipsum is simply dummy text of thtypesettin"
-                        }
-                        image={image4}
-                    />
+
+                    {specialists.map((specialist) => (
+                        <CardItem
+                            key={specialist.id}
+                            SpecialistName={specialist.name}
+                            text={specialist.description}
+                            image={`/images/specialist${specialist.id}.png`}
+                            link={`/schedule/${specialist.id}`}
+                        />
+                    ))}
                     {/* akhir item card specialist .....*/}
                     {/* see more  */}
                     <div className="w-full mt-2 flex ">
