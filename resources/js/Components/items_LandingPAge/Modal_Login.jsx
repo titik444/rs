@@ -1,5 +1,5 @@
 import { Link, useForm } from "@inertiajs/react";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 
 function Modal_Login() {
     const { data, setData, post, processing, errors, reset } = useForm({

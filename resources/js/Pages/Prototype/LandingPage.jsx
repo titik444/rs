@@ -9,14 +9,8 @@ import Form_Guess from "@/Components/Form_Guess";
 import Footer from "@/Components/Footer";
 import backgroundJumbotron from "@/images/backgroundJumbotron.png";
 import Modal from "@/Components/items_LandingPAge/Modal_Login";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 export default function LandingPage() {
-    useEffect(() => {
-        setTimeout(() => {
-            window.modal_login.showModal();
-        }, 2500);
-    }, []);
-
     return (
         <>
             <Navbar />
