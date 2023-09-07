@@ -1,7 +1,7 @@
 import { Link, useForm } from "@inertiajs/react";
 import React, { useEffect, useRef } from "react";
 
-function Modal_Login() {
+function Modal_Login(props) {
     const { data, setData, post, processing, errors, reset } = useForm({
         email: "",
         password: "",
@@ -27,7 +27,7 @@ function Modal_Login() {
     return (
         <>
             {/* modal login  */}
-            <dialog id="modal_login" className="modal">
+            <dialog open={props.show} id="modal_login" className="modal">
                 <form
                     method="dialog"
                     className="modal-box space-y-4 md:space-y-6"
