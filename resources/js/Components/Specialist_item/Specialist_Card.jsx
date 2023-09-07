@@ -1,8 +1,8 @@
 import React from "react";
 import imageCard from "@/images/specialist.png";
 import CardItem from "@/Components/Specialist_item/CardItem";
-import image1 from "@/images/specialist.png";
-import image2 from "@/images/specialist 2.png";
+import image1 from "@/images/Specialist.png";
+import image2 from "@/images/Specialist2.png";
 import image3 from "@/images/specialist3.png";
 import image4 from "@/images/specialist4.png";
 import Footer from "../Footer";
