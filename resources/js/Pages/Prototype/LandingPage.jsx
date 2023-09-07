@@ -20,7 +20,12 @@ export default function LandingPage() {
     return (
         <>
             <Navbar />
-            <Jumbotron backgroundImage={backgroundJumbotron} />
+            <Jumbotron
+                text1={"We are ready become"}
+                text2={"Health And Care Solution’s"}
+                backgroundImage={backgroundJumbotron}
+                action={"login"}
+            />
             <WhyChooseUs />
             <About_Us />
             <DoctorPage />
