@@ -5,6 +5,7 @@ import { AiFillHome } from "react-icons/ai";
 import { FaBriefcaseMedical } from "react-icons/fa";
 import { BsTranslate } from "react-icons/bs";
 import { BiLogOut } from "react-icons/bi";
+import { Link } from "@inertiajs/react";
 
 function NavbarForUser() {
     const [sidebarAktif, setSidebarAktif] = useState(false);
@@ -116,7 +117,9 @@ function NavbarForUser() {
                                 <BiLogOut />
                                 {/* teks */}
                                 <h2 className="pl-5 text-sm font-semibold  ">
-                                    Log Out
+                                    <Link method="POST" href={"/logout"}>
+                                        Log Out
+                                    </Link>
                                 </h2>
                             </div>
                         </a>

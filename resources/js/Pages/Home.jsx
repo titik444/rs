@@ -10,6 +10,7 @@ import backgroundJumbotron from "@/images/backgroundJumbotron.png";
 import Modal from "@/Components/items_LandingPAge/Modal_Login";
 import { usePage } from "@inertiajs/react";
 import { useEffect } from "react";
+import NavbarForUser from "@/Components/DasbordUser_item/NavbarForUser";
 
 export default function Home() {
     const { auth } = usePage().props;
@@ -24,8 +25,14 @@ export default function Home() {
 
     return (
         <>
-            <Navbar />
-            <Jumbotron backgroundImage={backgroundJumbotron} />
+            {!auth.user ? <Navbar /> : <NavbarForUser />}
+
+            <Jumbotron
+                text1={"We are ready become"}
+                text2={"Health And Care Solution’s"}
+                backgroundImage={backgroundJumbotron}
+                action={"login"}
+            />
             <WhyChooseUs />
             <About_Us />
             <DoctorPage />

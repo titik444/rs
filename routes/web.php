@@ -17,9 +17,6 @@ require __DIR__ . '/auth.php';
 
 Route::namespace('App\Http\Controllers')->group(function () {
 
-    // nanti dihapus
-    Route::get('logout', 'Auth\AuthenticatedSessionController@destroy')->name('logout');
-
     Route::get('/', 'HomeController@index')->name('home.index');
     Route::post('/', 'HomeController@store')->name('feedback.store');
 
@@ -29,4 +26,4 @@ Route::namespace('App\Http\Controllers')->group(function () {
     Route::get('/appointment/create/{id}', 'AppointmentController@create')->name('appointment.create');
     Route::post('/appointment', 'AppointmentController@store')->name('appointment.store');
     Route::get('/appointment/success', 'AppointmentController@success')->name('appointment.success');
-    });
+});
