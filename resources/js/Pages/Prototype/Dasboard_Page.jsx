@@ -9,7 +9,7 @@ function Dasboard_Page() {
             <NavbarForUser />
             {/* jumbotron */}
             <Jumbotron
-                text1={"Welcome mr.Smith"}
+                text1={"Welcome mr.Ilham"}
                 text2={"We are your Health Solution"}
                 backgroundImage={DasboradImage}
             />

@@ -87,9 +87,7 @@ function NavbarForUser() {
                     </li>
                     {/* akhir  item komponen ------ LI  */}
                     {/* judul container... */}
-                    <h1 className="text-lg font-bold p-2 text-center">
-                        About Us
-                    </h1>
+
                     {/* item card specialist.....*/}
                     {/* item komponen ------ LI  */}
                     <li className="group  hover:scale-110">
