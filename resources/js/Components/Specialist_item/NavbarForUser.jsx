@@ -117,9 +117,7 @@ function NavbarForUser() {
                                 <BiLogOut />
                                 {/* teks */}
                                 <h2 className="pl-5 text-sm font-semibold  ">
-                                    <Link method="POST" href={"/logout"}>
-                                        Log Out
-                                    </Link>
+                                    Log Out
                                 </h2>
                             </div>
                         </a>

@@ -1,7 +1,7 @@
-import NavbarForUser from "@/Components/DasbordUser_item/NavbarForUser";
+import NavbarForUser from "@/Components/Specialist_item/NavbarForUser";
 import Jumbotron from "@/Components/Jumbotron";
 import DasboradImage from "@/images/dasboard.png";
-import Specialist_Card from "@/Components/DasbordUser_item/Specialist_Card";
+import Specialist_Card from "@/Components/Specialist_item/Specialist_Card";
 function Dasboard_Page() {
     return (
         <>
