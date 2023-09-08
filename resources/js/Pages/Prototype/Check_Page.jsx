@@ -2,6 +2,8 @@ import React from "react";
 import NavbarForUser from "@/Components/Specialist_item/NavbarForUser";
 import Jumbotron from "@/Components/Jumbotron";
 import DasboradImage from "@/images/dasboard.png";
+import MenuCheck from "@/Components/CheckPage_Items/MenuCheck";
+import Dokter from "@/Components/CheckPage_Items/Dokter";
 function Check_Page() {
     return (
         <>
@@ -14,6 +16,9 @@ function Check_Page() {
                 backgroundImage={DasboradImage}
             />
             {/* menu  */}
+            <MenuCheck />
+            {/* dokter card.... */}
+            <Dokter />
         </>
     );
 }
