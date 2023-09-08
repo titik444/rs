@@ -10,7 +10,7 @@ import backgroundJumbotron from "@/images/backgroundJumbotron.png";
 import Modal from "@/Components/items_LandingPAge/Modal_Login";
 import { usePage } from "@inertiajs/react";
 import { useEffect } from "react";
-import NavbarForUser from "@/Components/DasbordUser_item/NavbarForUser";
+import NavbarForUser from "@/Components/Specialist_item/NavbarForUser";
 
 export default function Home() {
     const { auth } = usePage().props;
