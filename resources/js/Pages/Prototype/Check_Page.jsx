@@ -4,6 +4,7 @@ import Jumbotron from "@/Components/Jumbotron";
 import DasboradImage from "@/images/dasboard.png";
 import MenuCheck from "@/Components/CheckPage_Items/MenuCheck";
 import Dokter from "@/Components/CheckPage_Items/Dokter";
+import Footer from "@/Components/Footer";
 function Check_Page() {
     return (
         <>
@@ -19,6 +20,7 @@ function Check_Page() {
             <MenuCheck />
             {/* dokter card.... */}
             <Dokter />
+            <Footer />
         </>
     );
 }

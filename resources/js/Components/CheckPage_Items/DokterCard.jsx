@@ -1,17 +1,19 @@
 import React from "react";
-import dokter1 from "@/images/Man.png";
 
-function DokterCard() {
+function DokterCard({ nama, image, date, time }) {
     return (
         <>
-            <div className="w-full rounded-md h-auto flex justify-evenly items-center p-5 mt-1 drop-shadow-md bg-base-color">
+            <div className="w-full rounded-md h-auto flex justify-evenly items-center p-5 mt-3 hover:scale-105 transform transition-transform duration-300 ease-in-out drop-shadow-md bg-base-color">
                 {/* foto card */}
-                <img src={dokter1} alt="dokter" />
+                <div className="">
+                    <img src={image} alt="dokter" className="ml-5" />
+                    <h1 className="text-sm p-2 mr-2 font-bold">{nama}</h1>
+                </div>
+
                 {/* text card */}
-                <div>
-                    <h1>Dr. Michael Smith</h1>
-                    <h2>Monday & Thuesday</h2>
-                    <h3>07.00 - 11.00 WIB</h3>
+                <div className="text-center">
+                    <h2 className="text-sm font-bold">{date}</h2>
+                    <h3 className="text-sm">{time}</h3>
                 </div>
             </div>
         </>
