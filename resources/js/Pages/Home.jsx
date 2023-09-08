@@ -15,14 +15,6 @@ import NavbarForUser from "@/Components/Specialist_item/NavbarForUser";
 export default function Home() {
     const { auth } = usePage().props;
 
-    useEffect(() => {
-        // show modal if not login
-        auth.user ||
-            setTimeout(() => {
-                window.modal_login.showModal();
-            }, 2500);
-    }, []);
-
     return (
         <>
             {!auth.user ? <Navbar /> : <NavbarForUser />}

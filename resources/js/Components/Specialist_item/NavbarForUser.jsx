@@ -5,9 +5,11 @@ import { AiFillHome } from "react-icons/ai";
 import { FaBriefcaseMedical } from "react-icons/fa";
 import { BsTranslate } from "react-icons/bs";
 import { BiLogOut } from "react-icons/bi";
-import { Link } from "@inertiajs/react";
+import { Link, usePage } from "@inertiajs/react";
 
 function NavbarForUser() {
+    const { auth } = usePage().props;
+
     const [sidebarAktif, setSidebarAktif] = useState(false);
     const sidebarRef = useRef(null);
     const humbergerRef = useRef(null);
@@ -108,10 +110,7 @@ function NavbarForUser() {
 
                     {/* item komponen ------ LI  */}
                     <li className="group  hover:scale-110">
-                        <a
-                            href="#home"
-                            className="text-base text-dark py-2 mx-8 flex"
-                        >
+                        <a className="text-base text-dark py-2 mx-8 flex">
                             <div className="w-full flex justify-start items-center text-xl py-2 text-red-500">
                                 {/* logo */}
                                 <BiLogOut />
@@ -140,7 +139,9 @@ function NavbarForUser() {
                                 {/* logo */}
                                 <BsPersonCircle />
                                 {/* teks */}
-                                <h2 className="pl-3 text-sm">ilham</h2>
+                                <h2 className="pl-3 text-sm">
+                                    {auth?.data?.name}
+                                </h2>
                             </div>
                         </a>
                     </li>
