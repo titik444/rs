@@ -4,17 +4,10 @@ import DasboradImage from "@/images/dasboard.png";
 import MenuCheck from "@/Components/CheckPage_Items/MenuCheck";
 import Dokter from "@/Components/CheckPage_Items/Dokter";
 import Footer from "@/Components/Footer";
-import { Link } from "@inertiajs/react";
+import { usePage } from "@inertiajs/react";
 
 export default function Show({ schedules }) {
-    // return schedules.map((schedule) => (
-    //     <div key={schedule.id}>
-    //         <Link href={`/appointment/create/${schedule.id}`}>
-    //             {schedule.doctor.user.name} - {schedule.day} -{" "}
-    //             {schedule.start_time} - {schedule.end_time}
-    //         </Link>
-    //     </div>
-    // ));
+    const { auth } = usePage().props;
 
     return (
         <>
@@ -22,7 +15,7 @@ export default function Show({ schedules }) {
             <NavbarForUser />
             {/* jumbotron ....... */}
             <Jumbotron
-                text1={"Welcome mr.Ilham"}
+                text1={`Welcome ${auth.user.name}`}
                 text2={"We are your Health Solution"}
                 backgroundImage={DasboradImage}
             />
