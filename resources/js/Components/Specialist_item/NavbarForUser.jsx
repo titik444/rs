@@ -2,8 +2,9 @@ import React, { useEffect, useRef, useState } from "react";
 import logo from "@/images/Rumah Sakit 2.png";
 import { BsPersonCircle } from "react-icons/bs";
 import { AiFillHome } from "react-icons/ai";
-import { FaBriefcaseMedical } from "react-icons/fa";
+import { FaBriefcaseMedical, FaHospitalUser } from "react-icons/fa";
 import { BsTranslate } from "react-icons/bs";
+
 import { BiLogOut } from "react-icons/bi";
 import { Link, usePage } from "@inertiajs/react";
 
@@ -93,6 +94,20 @@ function NavbarForUser() {
 
                     {/* item card specialist.....*/}
                     {/* item komponen ------ LI  */}
+                    <li className="group  hover:scale-110">
+                        <a
+                            href="#home"
+                            className="text-base text-dark py-2 mx-8 flex"
+                        >
+                            <div className="w-full flex justify-start items-center text-xl py-2">
+                                {/* logo */}
+                                <FaHospitalUser />
+                                {/* teks */}
+                                <h2 className="pl-5 text-sm">Record</h2>
+                            </div>
+                        </a>
+                    </li>
+                    {/* akhir  item komponen ------ LI  */}
                     <li className="group  hover:scale-110">
                         <a
                             href="#home"

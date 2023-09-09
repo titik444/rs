@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Modal from "@/Components/items_LandingPAge/Modal_Login";
 import { usePage } from "@inertiajs/react";
 import Modal_Login from "@/Components/items_LandingPAge/Modal_Login";
 
