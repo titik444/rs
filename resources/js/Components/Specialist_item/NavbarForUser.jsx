@@ -155,7 +155,7 @@ function NavbarForUser() {
                                 <BsPersonCircle />
                                 {/* teks */}
                                 <h2 className="pl-3 text-sm">
-                                    {auth.user.name}
+                                    {auth?.user?.name}
                                 </h2>
                             </div>
                         </a>
