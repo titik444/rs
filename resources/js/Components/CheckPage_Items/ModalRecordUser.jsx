@@ -4,26 +4,13 @@ function ModalRecordUser() {
     return (
         <>
             <dialog id="record_modal" className="modal">
-                <form action=""></form>
                 <div className="modal-box w-11/12 max-w-5xl">
                     {/*  menu record by date ..... */}
-                    <ul className="menu menu-horizontal m-auto bg-base-200 w-auto p-2 flex justify-evenly">
-                        <li>
-                            <button className="btn-info">
-                                <a>record 1 </a>
-                            </button>
-                        </li>
-                        <li>
-                            <button className="btn-info">
-                                <a>record 2 </a>
-                            </button>
-                        </li>
-                        <li>
-                            <button className="btn-info">
-                                <a>record 3 </a>
-                            </button>
-                        </li>
-                    </ul>
+                    <div className="tabs tabs-boxed">
+                        <a className="tab">Tab 1</a>
+                        <a className="tab tab-active">Tab 2</a>
+                        <a className="tab">Tab 1</a>
+                    </div>
                     {/*  name of docter .......... */}
                     <div className="mt-2">
                         <span className="label-text">name of Docter</span>
