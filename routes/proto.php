@@ -15,4 +15,7 @@ Route::prefix('/proto')->group(function () {
 
      // http://127.0.0.1:8000/proto/Check_Page
      Route::inertia('/Check_Page', 'Prototype/Check_Page');
+
+         // http://127.0.0.1:8000/proto/Form_Check
+         Route::inertia('/Form_Check', 'Prototype/Form_Check');
 });
