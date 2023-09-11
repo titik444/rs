@@ -21,11 +21,11 @@ export default function Jumbotron({ backgroundImage, text1, text2, action }) {
             >
                 {/* box text-jumbotron */}
                 <div className=" p-3">
-                    <p className="font-montserrat text-white font-thin text-md italic text-shadow">
+                    <p className="font-montserrat text-white font-thin text-md italic text-shadow md:text-lg md:ml-3">
                         {text1}
                     </p>
-                    <div className="w-64 p-2">
-                        <h2 className="font-roboto font-semibold text-white text-3xl text-shadow2">
+                    <div className="w-64 p-2 md:w-72">
+                        <h2 className="font-roboto font-semibold text-white text-3xl text-shadow2 md:text-4xl">
                             {text2}
                         </h2>
                     </div>
@@ -37,7 +37,7 @@ export default function Jumbotron({ backgroundImage, text1, text2, action }) {
                                     .getElementById("modal_login")
                                     .showModal()
                             }
-                            className="bg-[#1279FF] hover:active:bg-[#273b55] active:bg-[#273b55] w-24 h-9 mt-3.5 text-white rounded-md border-none font-extrabold drop-shadow-xl "
+                            className="bg-[#1279FF]  hover:active:bg-[#273b55] active:bg-[#273b55] w-24 h-9 mt-3.5 text-white rounded-md border-none font-extrabold drop-shadow-xl md:ml-3"
                         >
                             Login
                         </button>

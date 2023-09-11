@@ -10,15 +10,6 @@ function Form_Check() {
                 Checking Form
             </h1>
             <form action="" className="p-3">
-                {/* masukan calon pasien */}
-                <label htmlFor="">
-                    <span className="label-text ">patient's name</span>
-                </label>
-                <input
-                    type="text"
-                    placeholder="name of patient's...."
-                    className="input w-full bg-base-color mt-3"
-                />
                 {/* masukan alamat  */}
                 <label htmlFor="">
                     <span className="label-text ">patient address</span>
@@ -45,16 +36,7 @@ function Form_Check() {
                     type="time"
                     className="input w-full bg-base-color mt-3"
                 />
-                {/* nama dokter  */}
-                {/* otomatis diisi oleh database  */}
-                <label htmlFor="">
-                    <span className="label-text ">name of Docter</span>
-                </label>
-                <input
-                    type="text"
-                    placeholder="Dokter Name ...."
-                    className="input w-full bg-base-color mt-3"
-                />
+
                 {/* status BPJS  */}
                 <div className=" w-full mt-3 flex justify-evenly">
                     <div>
