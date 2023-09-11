@@ -8,11 +8,11 @@ function Dokter({ schedules }) {
     return (
         <>
             <div
-                className="flex flex-col m-auto w-96 p-2 "
+                className="flex flex-col m-auto w-[90%] p-2 mt-20 "
                 id="targetElementId"
             >
                 <h1 className="text-lg font-bold p-2 text-center mt-5">
-                    Our Dokter
+                    Our Docter
                 </h1>
 
                 {schedules.map((schedule) => (
@@ -22,7 +22,13 @@ function Dokter({ schedules }) {
                                 image={dokter1}
                                 nama={schedule.doctor.user.name}
                                 date={schedule.day}
-                                time={`${moment(schedule.start_time, 'HH:mm:ss').format('hh:mm')} - ${moment(schedule.end_time, 'HH:mm:ss').format('hh:mm')} WIB`}
+                                time={`${moment(
+                                    schedule.start_time,
+                                    "HH:mm:ss"
+                                ).format("hh:mm")} - ${moment(
+                                    schedule.end_time,
+                                    "HH:mm:ss"
+                                ).format("hh:mm")} WIB`}
                             />
                         </Link>
                     </div>

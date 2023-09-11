@@ -9,7 +9,7 @@ function Form_Check() {
             <h1 className="text-lg font-bold  text-center mt-20">
                 Checking Form
             </h1>
-            <form action="" className="p-3">
+            <form action="" className="w-[90%] m-auto mt-5">
                 {/* masukan alamat  */}
                 <label htmlFor="">
                     <span className="label-text ">patient address</span>
@@ -69,7 +69,7 @@ function Form_Check() {
                 {/* md */}
                 <textarea
                     placeholder="complaint ..."
-                    className="textarea textarea-bordered textarea-md w-full  bg-base-color mt-3 "
+                    className="textarea textarea-bordered textarea-md h-52 w-full  bg-base-color mt-3 "
                 ></textarea>
                 {/* button */}
                 <div className="w-full  b mt-5 flex ">
