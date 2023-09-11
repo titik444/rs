@@ -7,7 +7,7 @@ import people3 from "@/images/ratingPeople3.png";
 export default function RatingPage() {
     return (
         <>
-            <div className="flex flex-col justify-center items-center">
+            <div className="flex flex-col justify-center items-center md:flex-row md:flex-wrap md:gap-4">
                 <RatingCard
                     image={people1}
                     nama={"Lorem Ipsum is"}

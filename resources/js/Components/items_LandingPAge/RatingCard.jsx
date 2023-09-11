@@ -2,7 +2,7 @@ import React from "react";
 
 function RatingCard({ image, nama, text }) {
     return (
-        <div className="card w-96 h-auto bg-scale-200 shadow-2xl mt-3">
+        <div className="card w-96 h-auto bg-scale-200 shadow-2xl mt-3 md:w-80">
             <div className="card-body">
                 <div className="avatar flex flex-col items-center">
                     {/* image */}
@@ -47,7 +47,7 @@ function RatingCard({ image, nama, text }) {
                         disabled
                     />
                 </div>
-                <p className=" font-montserrat font-thin text-sm text-center">
+                <p className=" font-montserrat font-thin text-sm text-center md:text-xs">
                     "${text}";
                 </p>
             </div>
