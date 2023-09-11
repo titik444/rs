@@ -6,8 +6,10 @@ import logo3 from "../images/logo3.png";
 function WhyChooseUs() {
     return (
         <>
-            <div className="container h-auto p-2 flex flex-col justify-center items-center">
-                <h1 className="text-lg font-bold p-2">Why Choose Us</h1>
+            <h1 className="text-lg text-center font-bold p-2 md:mt-2 md:text-xl">
+                Why Choose Us
+            </h1>
+            <div className=" h-auto p-2 flex flex-col justify-center items-center md:flex-row md:p-2 md:justify-evenly ">
                 {/*  element card why chooose us  */}
                 <CardInfo
                     logo={logo1}

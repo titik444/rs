@@ -162,6 +162,7 @@ export function Navbar() {
                     </button>
                 </div>
             </div>
+            {/* Mne  */}
         </>
     );
 }

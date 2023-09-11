@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -16,15 +16,17 @@ function About_Us() {
         speed: 1000,
         autoplay: true,
         autoplaySpeed: 3000,
-        slidesToShow: 1, // Mengatur hanya 1 slide yang ditampilkan
+        slidesToShow: 3,
         slidesToScroll: 1,
     };
 
     return (
         <>
             <div className="flex flex-col justify-center bg-base-color items-center p-3 mt-2">
-                <h1 className="text-lg font-bold p-2 text-center">About Us</h1>
-                <div className="w-11/12 h-autorounded-md">
+                <h1 className="text-lg font-bold p-2 text-center md:text-xl">
+                    About Us
+                </h1>
+                <div className="w-11/12 h-autorounded-md mt-2">
                     <Slider {...settings}>
                         <div className="w-fit">
                             <img
@@ -67,14 +69,21 @@ function About_Us() {
                 <div className="p-3">
                     {/*  text about */}
                     <p className="p-3 font-montserrat font-light">
-                        Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry. Lorem Ipsum has been the
-                        industry's standard dummy text ever since the 1500s,
+                        Lorem ipsum dolor, sit amet consectetur adipisicing
+                        elit. Et non in ipsa eos adipisci perspiciatis
+                        reiciendis praesentium voluptates laborum excepturi
+                        recusandae repellat suscipit fuga sit eius nisi dolorem
+                        enim ea commodi soluta dignissimos, nam doloremque?
+                        Maxime cupiditate amet quis ipsam hic laborum minima
+                        impedit assumenda. Dolorum accusamus aperiam libero
+                        odit!
                     </p>
                     <p className="p-3 font-montserrat font-light">
-                        Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry. Lorem Ipsum has been the
-                        industry's standard dummy text ever since the 1500s,
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Velit rerum adipisci provident, explicabo
+                        voluptatem incidunt repellat quod perferendis iusto,
+                        totam quia doloribus labore consequatur qui consequuntur
+                        ea id quisquam minus.
                     </p>
                 </div>
                 {/* fiture container */}
