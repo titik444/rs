@@ -26,7 +26,7 @@ class AppointmentStoreRequest extends FormRequest
             'patient_id' => 'exists:App\Models\Patient,id',
             'doctor_id' => 'exists:App\Models\Doctor,id',
             'appointment_date' => 'required|date',
-            'appointment_time' => 'required|time',
+            'appointment_time' => 'required',
             'insurance' => 'required',
             'complaint' => 'required',
         ];
