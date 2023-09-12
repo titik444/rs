@@ -7,11 +7,12 @@ function Professional_Doctor() {
     //  Variable Doctor profile
     return (
         <>
-            <div className="flex flex-col justify-center bg-base-color items-center p-3 mt-2">
+            <h1 className="text-lg font-bold p-2 text-center">
+                Professional Doctor
+            </h1>
+            <div className="flex flex-col justify-center bg-base-color items-center p-3 lg:p-5 mt-2 md:flex-row lg:mb-5">
                 {/* PROFILE TOP DOCTOR ....*/}
-                <h1 className="text-lg font-bold p-2 text-center">
-                    Professional Doctor
-                </h1>
+
                 {/* doctor Card */}
                 {/* dokter profile 1 */}
                 <DoctorCard

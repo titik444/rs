@@ -36,11 +36,14 @@ function Form_Guess({ flashMessage }) {
 
     return (
         <>
-            <div className="container bg-base-color w-full h-auto p-5 mt-5">
-                <h1 className="text-lg font-bold p-2 text-center mb-3">
+            <div className=" bg-base-color w-full h-auto p-5 mt-5">
+                <h1 className="text-lg font-bold p-2 text-center md:text-xl mb-3">
                     Feedback Form
                 </h1>
-                <form onSubmit={onHandleSubmit}>
+                <form
+                    onSubmit={onHandleSubmit}
+                    className="md:w-[80%] md:m-auto"
+                >
                     {/* input your name ...... */}
                     <input
                         type="text"

@@ -52,9 +52,9 @@ export function Navbar() {
             <nav
                 ref={sidebarRef}
                 id="sidebar"
-                className="w-52 h-auto rounded-md fixed top-5  bg-white z-20 p-3 -right-[250px]"
+                className="w-52 h-auto rounded-md fixed top-5  bg-white z-20 p-3 -right-[250px] lg:h-0 lg:left-[40%] lg:top-0"
             >
-                <ul className="block">
+                <ul className="block lg:flex">
                     {/* item komponen ------ LI  */}
                     <li className="group hover:scale-110">
                         <a
@@ -63,9 +63,11 @@ export function Navbar() {
                         >
                             <div className="w-full flex justify-start items-center text-xl py-2">
                                 {/* logo */}
-                                <AiFillHome />
+                                <AiFillHome className="lg:hidden" />
                                 {/* teks */}
-                                <h2 className="pl-5 text-sm">Home</h2>
+                                <h2 className="pl-5 text-sm lg:font-semibold ">
+                                    Home
+                                </h2>
                             </div>
                         </a>
                     </li>
@@ -78,9 +80,11 @@ export function Navbar() {
                         >
                             <div className="w-full flex justify-start items-center text-xl py-2">
                                 {/* logo */}
-                                <AiFillInfoCircle />
+                                <AiFillInfoCircle className="lg:hidden" />
                                 {/* teks */}
-                                <h2 className="pl-5 text-sm">About Us</h2>
+                                <h2 className="pl-5 text-sm lg:font-semibold lg:w-20">
+                                    About Us
+                                </h2>
                             </div>
                         </a>
                     </li>
@@ -93,9 +97,11 @@ export function Navbar() {
                         >
                             <div className="w-full flex justify-start items-center text-xl py-2">
                                 {/* logo */}
-                                <FaBriefcaseMedical />
+                                <FaBriefcaseMedical className="lg:hidden" />
                                 {/* teks */}
-                                <h2 className="pl-5 text-sm">Check</h2>
+                                <h2 className="pl-5 text-sm lg:font-semibold ">
+                                    Check
+                                </h2>
                             </div>
                         </a>
                     </li>
@@ -108,25 +114,27 @@ export function Navbar() {
                         >
                             <div className="w-full flex justify-start items-center text-xl py-2">
                                 {/* logo */}
-                                <BsFillChatSquareDotsFill />
+                                <BsFillChatSquareDotsFill className="lg:hidden" />
                                 {/* teks */}
-                                <h2 className="pl-5 text-sm">Testimony</h2>
+                                <h2 className="pl-5 text-sm lg:font-semibold ">
+                                    Testimony
+                                </h2>
                             </div>
                         </a>
                     </li>
                     {/* akhir  item komponen ------ LI  */}
                     {/* item komponen ------ LI  */}
-                    <li className="group  hover:scale-110">
+
+                    {/* akhir  item komponen ------ LI  */}
+                    <li className="group  hover:scale-110 lg:mt-0 mt-20">
                         <a
                             href="#home"
                             className="text-base text-dark py-2 mx-8 flex"
                         >
-                            <div className="w-full flex justify-start items-center text-xl py-2">
-                                {/* logo */}
-                                <BsTranslate />
-                                {/* teks */}
-                                <h2 className="pl-5 text-sm">Language</h2>
-                            </div>
+                            {/* teks */}
+                            <h2 className="pl-5 font-bold text-lg text-blue-500 ">
+                                Login
+                            </h2>
                         </a>
                     </li>
                     {/* akhir  item komponen ------ LI  */}
@@ -142,7 +150,11 @@ export function Navbar() {
                         </div>
                     </a>
                 </div>
-                <div id="hamburger" onClick={handleClick} className="flex-none">
+                <div
+                    id="hamburger"
+                    onClick={handleClick}
+                    className="flex-none lg:hidden "
+                >
                     <button id="hamburger" className="btn btn-square btn-ghost">
                         <svg
                             id="hamburger"
@@ -162,6 +174,7 @@ export function Navbar() {
                     </button>
                 </div>
             </div>
+            {/* Mne  */}
         </>
     );
 }

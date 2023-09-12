@@ -13,7 +13,6 @@ function NavbarForUser() {
 
     const [sidebarAktif, setSidebarAktif] = useState(false);
     const sidebarRef = useRef(null);
-    const humbergerRef = useRef(null);
 
     const handleClick = () => {
         setSidebarAktif(true);
@@ -56,9 +55,9 @@ function NavbarForUser() {
             <nav
                 ref={sidebarRef}
                 id="sidebar"
-                className="w-52 h-auto rounded-md fixed top-5 z-30  bg-white p-3 -right-[250px]"
+                className="w-52 h-auto rounded-md fixed top-5 z-30  bg-white p-3 -right-[250px]  lg:h-0 lg:left-[40%] lg:top-0"
             >
-                <ul className="block">
+                <ul className="block lg:flex">
                     {/* item komponen ------ LI  */}
                     <li className="group hover:scale-110">
                         <a
@@ -67,7 +66,7 @@ function NavbarForUser() {
                         >
                             <div className="w-full flex justify-start items-center text-xl py-2">
                                 {/* logo */}
-                                <AiFillHome />
+                                <AiFillHome className="lg:hidden" />
                                 {/* teks */}
                                 <h2 className="pl-5 text-sm">Home</h2>
                             </div>
@@ -83,7 +82,7 @@ function NavbarForUser() {
                         >
                             <div className="w-full flex justify-start items-center text-xl py-2">
                                 {/* logo */}
-                                <FaBriefcaseMedical />
+                                <FaBriefcaseMedical className="lg:hidden" />
                                 {/* teks */}
                                 <h2 className="pl-5 text-sm">Check</h2>
                             </div>
@@ -101,7 +100,7 @@ function NavbarForUser() {
                         >
                             <div className="w-full flex justify-start items-center text-xl py-2">
                                 {/* logo */}
-                                <FaHospitalUser />
+                                <FaHospitalUser className="lg:hidden" />
                                 {/* teks */}
                                 <h2 className="pl-5 text-sm">Record</h2>
                             </div>
@@ -115,7 +114,7 @@ function NavbarForUser() {
                         >
                             <div className="w-full flex justify-start items-center text-xl py-2">
                                 {/* logo */}
-                                <BsTranslate />
+                                <BsTranslate className="lg:hidden" />
                                 {/* teks */}
                                 <h2 className="pl-5 text-sm">Language</h2>
                             </div>
@@ -124,13 +123,13 @@ function NavbarForUser() {
                     {/* akhir  item komponen ------ LI  */}
 
                     {/* item komponen ------ LI  */}
-                    <li className="group  hover:scale-110">
+                    <li className=" group  hover:scale-110">
                         <a className="text-base text-dark py-2 mx-8 flex">
                             <div className="w-full flex justify-start items-center text-xl py-2 text-red-500">
                                 {/* logo */}
-                                <BiLogOut />
+                                <BiLogOut className="lg:hidden" />
                                 {/* teks */}
-                                <h2 className="pl-5 text-sm font-semibold  ">
+                                <h2 className="pl-5 text-sm font-semibold lg:w-32 ">
                                     <Link
                                         as="button"
                                         method="POST"
@@ -173,7 +172,11 @@ function NavbarForUser() {
                         </div>
                     </a>
                 </div>
-                <div id="hamburger" onClick={handleClick} className="flex-none">
+                <div
+                    id="hamburger"
+                    onClick={handleClick}
+                    className="flex-none lg:hidden"
+                >
                     <button id="hamburger" className="btn btn-square btn-ghost">
                         <svg
                             id="hamburger"

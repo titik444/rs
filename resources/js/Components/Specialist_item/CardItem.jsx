@@ -5,8 +5,8 @@ function Specialist_Card({ SpecialistName, text, image, link }) {
     return (
         <>
             {/* container Card  */}
-            <div className="container  flex flex-col justify-center z-0 static items-center p-2 ">
-                <div className="card w-80  bg-base-100 shadow-xl image-full hover:scale-105 hover:-translate-y-1 duration-300">
+            <div className="flex flex-col justify-center z-0 static items-center p-2 ">
+                <div className="card w-80 bg-base-100 shadow-xl image-full hover:scale-105 hover:-translate-y-1 duration-300">
                     <figure>
                         <img src={image} alt={SpecialistName} />
                     </figure>
