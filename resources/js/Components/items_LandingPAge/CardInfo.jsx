@@ -2,7 +2,7 @@ import React from "react";
 
 function CardInfo({ logo, title, text }) {
     return (
-        <div className="card w-80 bg-base-color mt-5 flex items-center shadow-xl p-2 md:w-60 md:p-0">
+        <div className="card w-80 bg-base-color mt-5 flex items-center shadow-xl p-2 md:w-60 md:p-0 lg:w-96 lg:p-5 lg:mb-10">
             {/* Image logo */}
             <div className="w-22 h-20 p-2 md:p-3">
                 <img

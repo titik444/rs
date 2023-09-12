@@ -37,7 +37,7 @@ function Form_Guess({ flashMessage }) {
     return (
         <>
             <div className=" bg-base-color w-full h-auto p-5 mt-5">
-                <h1 className="text-lg font-bold p-2 text-center mb-3">
+                <h1 className="text-lg font-bold p-2 text-center md:text-xl mb-3">
                     Feedback Form
                 </h1>
                 <form

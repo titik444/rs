@@ -10,7 +10,7 @@ function Professional_Doctor() {
             <h1 className="text-lg font-bold p-2 text-center">
                 Professional Doctor
             </h1>
-            <div className="flex flex-col justify-center bg-base-color items-center p-3 mt-2 md:flex-row">
+            <div className="flex flex-col justify-center bg-base-color items-center p-3 lg:p-5 mt-2 md:flex-row lg:mb-5">
                 {/* PROFILE TOP DOCTOR ....*/}
 
                 {/* doctor Card */}

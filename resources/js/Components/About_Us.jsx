@@ -41,7 +41,7 @@ function About_Us() {
 
     const ItemCardInfo = ({ persen, text1, text2 }) => {
         return (
-            <div className="card w-[350px] shadow-xl bg-[#6580B5] text-white mt-2 md:w-[250px] md:h-40">
+            <div className="card w-[350px] shadow-xl bg-[#6580B5] text-white mt-2 md:w-[250px] md:h-40 lg:w-[28%]">
                 <div className="card-body text-center ">
                     <h1 className="text-3xl font-montserrat font-bold md:text-2xl">
                         {persen}
@@ -61,7 +61,7 @@ function About_Us() {
                 <h1 className="text-lg font-bold p-2 text-center md:text-xl">
                     About Us
                 </h1>
-                <div className="w-11/12 h-autorounded-md mt-2">
+                <div className="w-11/12 h-autorounded-md mt-2 lg:p-5">
                     <Slider {...settings}>
                         <div className="w-fit">
                             <img
@@ -101,9 +101,9 @@ function About_Us() {
                     </Slider>
                 </div>
                 {/*  paragraf */}
-                <div className="p-3 md:flex md:justify-between">
+                <div className="p-3 md:flex md:justify-between lg:w-[85%]">
                     {/*  text about */}
-                    <p className="p-3 font-montserrat font-light md:font-thin">
+                    <p className="p-3 font-montserrat text-center md:text-left text-md italic md:font-thin">
                         Lorem ipsum dolor sit, amet consectetur adipisicing
                         elit. Nisi corporis sit, deserunt earum explicabo in
                         cumque at ullam consectetur voluptatibus sapiente!
@@ -111,7 +111,7 @@ function About_Us() {
                         accusamus dolor, distinctio explicabo cupiditate veniam
                         nam animi unde!
                     </p>
-                    <p className="p-3 font-montserrat font-light md:font-thin">
+                    <p className="p-3 font-montserrat text-center md:text-left font-light md:font-thin">
                         Lorem, ipsum dolor sit amet consectetur adipisicing
                         elit. Velit rerum adipisci provident, explicabo
                         voluptatem incidunt repellat quod perferendis iusto,
@@ -120,7 +120,7 @@ function About_Us() {
                     </p>
                 </div>
                 {/* fiture container */}
-                <div className="card w-[350px]  md:w-full md:flex md:flex-row md:justify-evenly md:p-2 ">
+                <div className="card w-[350px] md:w-full md:flex md:flex-row md:justify-evenly md:p-2 lg:mb-5 ">
                     {/* fiture one */}
                     <ItemCardInfo
                         persen={"98,45%"}
