@@ -9,10 +9,20 @@ import { BsTranslate, BsFillChatSquareDotsFill } from "react-icons/bs";
 export function Navbar() {
     const [sidebarAktif, setSidebarAktif] = useState(false);
     const sidebarRef = useRef(null);
-    const humbergerRef = useRef(null);
 
     const handleClick = () => {
         setSidebarAktif(true);
+    };
+
+    const handleScroll = (id) => {
+        const target = document.getElementById(id);
+        if (target) {
+            const yOffset = -50; // Sesuaikan dengan jumlah piksel yang ingin Anda kurangkan dari posisi akhir target
+            const y =
+                target.getBoundingClientRect().top + window.scrollY + yOffset;
+
+            window.scrollTo({ top: y, behavior: "smooth" });
+        }
     };
 
     useEffect(() => {
@@ -58,8 +68,9 @@ export function Navbar() {
                     {/* item komponen ------ LI  */}
                     <li className="group hover:scale-110">
                         <a
-                            href="#home"
+                            href="#Home"
                             className="text-base text-dark py-2 mx-8 flex"
+                            onClick={() => handleScroll("Home")}
                         >
                             <div className="w-full flex justify-start items-center text-xl py-2">
                                 {/* logo */}
@@ -71,11 +82,13 @@ export function Navbar() {
                             </div>
                         </a>
                     </li>
+
                     {/* akhir  item komponen ------ LI  */}
                     {/* item komponen ------ LI  */}
                     <li className="group  hover:scale-110">
                         <a
-                            href="#home"
+                            href="#About_us"
+                            onClick={() => handleScroll("About_us")}
                             className="text-base text-dark py-2 mx-8 flex"
                         >
                             <div className="w-full flex justify-start items-center text-xl py-2">
@@ -92,7 +105,8 @@ export function Navbar() {
                     {/* item komponen ------ LI  */}
                     <li className="group  hover:scale-110">
                         <a
-                            href="#home"
+                            onClick={() => handleScroll("Check")}
+                            href="#Check"
                             className="text-base text-dark py-2 mx-8 flex"
                         >
                             <div className="w-full flex justify-start items-center text-xl py-2">
@@ -109,8 +123,9 @@ export function Navbar() {
                     {/* item komponen ------ LI  */}
                     <li className="group  hover:scale-110">
                         <a
-                            href="#home"
+                            href="#Testimony"
                             className="text-base text-dark py-2 mx-8 flex"
+                            onClick={() => handleScroll("Testimony")}
                         >
                             <div className="w-full flex justify-start items-center text-xl py-2">
                                 {/* logo */}
@@ -126,11 +141,13 @@ export function Navbar() {
                     {/* item komponen ------ LI  */}
 
                     {/* akhir  item komponen ------ LI  */}
-                    <li className="group  hover:scale-110 lg:mt-0 mt-20">
-                        <a
-                            href="#home"
-                            className="text-base text-dark py-2 mx-8 flex"
-                        >
+                    <li
+                        className="group  hover:scale-110 lg:mt-0 mt-20"
+                        onClick={() =>
+                            document.getElementById("modal_login").showModal()
+                        }
+                    >
+                        <a className="text-base text-dark py-2 mx-8 flex">
                             {/* teks */}
                             <h2 className="pl-5 font-bold text-lg text-blue-500 ">
                                 Login
