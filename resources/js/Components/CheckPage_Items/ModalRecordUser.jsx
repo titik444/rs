@@ -1,63 +1,75 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 function ModalRecordUser() {
+    const [activeTabs, setActiveTabs] = useState("1");
+
+    useEffect(() => {
+        console.log(activeTabs);
+    }, [activeTabs]);
+
+    const recordSample = [
+        {
+            id: 1,
+            dokterName: "budi",
+            tnggl: "09/23/2023",
+            content:
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo maiores asperiores perspiciatis mollitia iste eligendi iure reprehenderit? Mollitia est impedit incidunt minima unde illo tenetur magnam sequi amet fuga nesciunt earum a, quis voluptatem quos nostrum dolores nobis ipsam rem?",
+        },
+        {
+            id: 2,
+            dokterName: "rudi",
+            tnggl: "09/19/2023",
+            content:
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo maiores asperiores perspiciatis mollitia iste eligendi iure reprehenderit? Mollitia est impedit incidunt minima unde illo tenetur magnam sequi amet fuga nesciunt earum a, quis voluptatem quos nostrum dolores nobis ipsam rem?",
+        },
+        {
+            id: 3,
+            dokterName: "rudi",
+            tnggl: "09/10/2023",
+            content:
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo maiores asperiores perspiciatis mollitia iste eligendi iure reprehenderit? Mollitia est impedit incidunt minima unde illo tenetur magnam sequi amet fuga nesciunt earum a, quis voluptatem quos nostrum dolores nobis ipsam rem?",
+        },
+    ];
     return (
         <>
-            <dialog id="record_modal" className="modal">
-                <div className="modal-box w-11/12 max-w-5xl">
-                    {/*  menu record by date ..... */}
-                    <div className="tabs tabs-boxed">
-                        <a className="tab">Tab 1</a>
-                        <a className="tab tab-active">Tab 2</a>
-                        <a className="tab">Tab 1</a>
+            {}
+            <ul>
+                <dialog id="record_modal" className="modal">
+                    <div className="modal-box w-11/12 max-w-5xl">
+                        <div className="tabs tabs-boxed w-full">
+                            {/*  menu record by date ..... */}
+                            {recordSample.map((tab) => (
+                                <a
+                                    key={tab.id}
+                                    className={`tab ${
+                                        activeTabs == tab.id
+                                            ? "tab-active"
+                                            : " "
+                                    } w-20 ml-5 hover:bg-primary-content`}
+                                    onClick={() => setActiveTabs(tab.id)}
+                                >
+                                    {tab.id}
+                                </a>
+                            ))}
+                        </div>
+                        <div>
+                            {/* content */}
+                            {recordSample.map((item) => {
+                                if (item.id == activeTabs) {
+                                    <h1 key={item.id}>asaas</h1>;
+                                }
+                            })}
+                            {/* akhir content */}
+                        </div>
+                        <div className="modal-action">
+                            <form method="dialog">
+                                {/* if there is a button, it will close the modal */}
+                                <button className="btn">Close</button>
+                            </form>
+                        </div>
                     </div>
-                    {/*  name of docter .......... */}
-                    <div className="mt-2">
-                        <span className="label-text">name of Docter</span>
-                        <input
-                            type="text"
-                            placeholder="dokter ..."
-                            className="input input-bordered w-full"
-                            disabled
-                        />
-                    </div>
-                    {/*  date of check  .......... */}
-                    <div className="mt-2">
-                        <span className="label-text">date of check </span>
-                        <input
-                            type="date"
-                            placeholder="dokter ....."
-                            className="input input-bordered w-full"
-                            disabled
-                        />
-                    </div>
-                    {/*  content .......... */}
-                    <div className="mt-2">
-                        <span className="label-text">date of check </span>
-                        <input
-                            type="text"
-                            placeholder="dokter ....."
-                            className="input input-bordered w-full"
-                            disabled
-                        />
-                    </div>
-                    {/* content of history record */}
-                    {/* box */}
-                    <span className="label-text mt-5">date of check </span>
-                    <textarea
-                        disabled
-                        placeholder="Bio"
-                        className="textarea textarea-bordered textarea-lg w-full "
-                    ></textarea>
-
-                    <div className="modal-action">
-                        <form method="dialog">
-                            {/* if there is a button, it will close the modal */}
-                            <button className="btn">Close</button>
-                        </form>
-                    </div>
-                </div>
-            </dialog>
+                </dialog>
+            </ul>
         </>
     );
 }
