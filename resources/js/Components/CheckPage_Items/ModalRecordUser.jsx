@@ -1,38 +1,50 @@
 import React, { useEffect, useState } from "react";
 
 function ModalRecordUser() {
-    const [activeTabs, setActiveTabs] = useState("1");
+    const [activeTabs, setActiveTabs] = useState();
+    const [showData, setShowData] = useState([]);
 
     useEffect(() => {
-        console.log(activeTabs);
+        const findData = recordSample.find((el) => el.id === activeTabs);
+        if (findData) {
+            setShowData([findData]);
+        }
     }, [activeTabs]);
 
     const recordSample = [
         {
-            id: 1,
-            dokterName: "budi",
+            id: 0,
+            dokterName: "mamang",
             tnggl: "09/23/2023",
-            content:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo maiores asperiores perspiciatis mollitia iste eligendi iure reprehenderit? Mollitia est impedit incidunt minima unde illo tenetur magnam sequi amet fuga nesciunt earum a, quis voluptatem quos nostrum dolores nobis ipsam rem?",
+            content: "sakit hati pak",
+        },
+        {
+            id: 1,
+            dokterName: "justin",
+            tnggl: "09/19/2023",
+            content: "sakit kepala",
         },
         {
             id: 2,
             dokterName: "rudi",
-            tnggl: "09/19/2023",
-            content:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo maiores asperiores perspiciatis mollitia iste eligendi iure reprehenderit? Mollitia est impedit incidunt minima unde illo tenetur magnam sequi amet fuga nesciunt earum a, quis voluptatem quos nostrum dolores nobis ipsam rem?",
+            tnggl: "09/10/2023",
+            content: "sakit gigi pak",
         },
         {
             id: 3,
             dokterName: "rudi",
             tnggl: "09/10/2023",
-            content:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo maiores asperiores perspiciatis mollitia iste eligendi iure reprehenderit? Mollitia est impedit incidunt minima unde illo tenetur magnam sequi amet fuga nesciunt earum a, quis voluptatem quos nostrum dolores nobis ipsam rem?",
+            content: "kesurupan pak",
+        },
+        {
+            id: 4,
+            dokterName: "rudi",
+            tnggl: "09/10/2023",
+            content: "lagi gx punya uang pak",
         },
     ];
     return (
         <>
-            {}
             <ul>
                 <dialog id="record_modal" className="modal">
                     <div className="modal-box w-11/12 max-w-5xl">
@@ -48,18 +60,38 @@ function ModalRecordUser() {
                                     } w-20 ml-5 hover:bg-primary-content`}
                                     onClick={() => setActiveTabs(tab.id)}
                                 >
-                                    {tab.id}
+                                    {tab.id + 1}
                                 </a>
                             ))}
                         </div>
-                        <div>
-                            {/* content */}
-                            {recordSample.map((item) => {
-                                if (item.id == activeTabs) {
-                                    <h1 key={item.id}>asaas</h1>;
-                                }
-                            })}
-                            {/* akhir content */}
+                        <div className="bg-base-200 w-full h-auto mt-10">
+                            {showData.map((item) => (
+                                <div key={item.id}>
+                                    {/* tanggal periksa  */}
+                                    <label className="p-2">Date Check</label>
+                                    <input
+                                        type="text"
+                                        className="input input-bordered w-full bg-base-color mt-2 "
+                                        value={item.tnggl}
+                                        readOnly
+                                    />
+                                    {/* nama dokter */}
+                                    <label className="p-2">Dokter Name</label>
+                                    <input
+                                        type="text"
+                                        className="input input-bordered w-full bg-base-color mt-2 "
+                                        value={item.dokterName}
+                                        readOnly
+                                    />
+                                    {/*  keterangan  */}
+                                    <label className="p-2">Keterangan</label>
+                                    <textarea
+                                        className="textarea textarea-bordered bg-base-color textarea-lg w-full  "
+                                        value={item.content}
+                                        readOnly
+                                    />
+                                </div>
+                            ))}
                         </div>
                         <div className="modal-action">
                             <form method="dialog">
