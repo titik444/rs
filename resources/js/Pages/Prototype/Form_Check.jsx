@@ -22,7 +22,7 @@ function Form_Check() {
                 {/* tanggal periksa  */}
                 {/* otomatis disi oleh database */}
                 <label htmlFor="">
-                    <span className="label-text ">Check_Date</span>
+                    <span className="label-text ">Check Date</span>
                 </label>
                 <input
                     type="date"
@@ -30,7 +30,7 @@ function Form_Check() {
                 />
                 {/* waktu ..... */}
                 <label htmlFor="">
-                    <span className="label-text ">time of check</span>
+                    <span className="label-text ">Check Date</span>
                 </label>
                 <input
                     type="time"

@@ -95,7 +95,11 @@ function NavbarForUser() {
                     {/* item komponen ------ LI  */}
                     <li className="group  hover:scale-110">
                         <a
-                            href="#home"
+                            onClick={() =>
+                                document
+                                    .getElementById("record_modal")
+                                    .showModal()
+                            }
                             className="text-base text-dark py-2 mx-8 flex"
                         >
                             <div className="w-full flex justify-start items-center text-xl py-2">

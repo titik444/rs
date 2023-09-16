@@ -16,6 +16,7 @@ export default function Jumbotron({ backgroundImage, text1, text2, action }) {
         <>
             <Modal_Login show={showModal} />
             <div
+                id="Home"
                 className="jumbotron h-[425px] lg:h-[450px] flex justify-start items-center lg:bg-fixed"
                 style={jumbotronStyle}
             >

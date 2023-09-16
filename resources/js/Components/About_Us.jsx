@@ -58,7 +58,10 @@ function About_Us() {
     return (
         <>
             <div className="flex flex-col justify-center bg-base-color items-center p-3 mt-2">
-                <h1 className="text-lg font-bold p-2 text-center md:text-xl">
+                <h1
+                    id="About_us"
+                    className="text-lg font-bold p-2 text-center md:text-xl"
+                >
                     About Us
                 </h1>
                 <div className="w-11/12 h-autorounded-md mt-2 lg:p-5">
@@ -142,7 +145,7 @@ function About_Us() {
                 </div>
             </div>
             {/*  Path to check  */}
-            <div className="mt-5">
+            <div id="Check" className="mt-5">
                 <img src={path} className="m-auto" alt="path image" />
             </div>
         </>

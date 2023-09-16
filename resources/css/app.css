@@ -11,3 +11,6 @@
 .sidebar-active {
     @apply right-0 transition-all;
 }
+html {
+    scroll-behavior: smooth;
+}

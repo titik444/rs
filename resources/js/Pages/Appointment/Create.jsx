@@ -52,7 +52,7 @@ export default function Create({ patient, schedule }) {
                 {/* tanggal periksa  */}
                 {/* otomatis disi oleh database */}
                 <label htmlFor="">
-                    <span className="label-text ">Check_Date</span>
+                    <span className="label-text ">Check Date</span>
                 </label>
                 <input
                     type="date"
@@ -63,7 +63,7 @@ export default function Create({ patient, schedule }) {
                 />
                 {/* waktu ..... */}
                 <label htmlFor="">
-                    <span className="label-text ">time of check</span>
+                    <span className="label-text ">Check Time</span>
                 </label>
                 <input
                     type="time"
