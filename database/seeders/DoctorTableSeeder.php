@@ -18,5 +18,17 @@ class DoctorTableSeeder extends Seeder
             'specialist_id' => 1,
             'image' => 'https://source.unsplash.com/500x500?doctor',
         ]);
+
+        Doctor::create([
+            'user_id' => 3,
+            'specialist_id' => 2,
+            'image' => 'https://source.unsplash.com/500x500?doctor',
+        ]);
+
+        Doctor::create([
+            'user_id' => 4,
+            'specialist_id' => 3,
+            'image' => 'https://source.unsplash.com/500x500?doctor',
+        ]);
     }
 }

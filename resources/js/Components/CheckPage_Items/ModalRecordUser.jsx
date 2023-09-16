@@ -1,48 +1,18 @@
 import React, { useEffect, useState } from "react";
 
-function ModalRecordUser() {
+function ModalRecordUser({ appointments }) {
     const [activeTabs, setActiveTabs] = useState();
     const [showData, setShowData] = useState([]);
 
     useEffect(() => {
-        const findData = recordSample.find((el) => el.id === activeTabs);
+        const findData = appointments.find((el) => el.id === activeTabs);
         if (findData) {
             setShowData([findData]);
         }
     }, [activeTabs]);
 
-    const recordSample = [
-        {
-            id: 0,
-            dokterName: "mamang",
-            tnggl: "09/23/2023",
-            content: "sakit hati pak",
-        },
-        {
-            id: 1,
-            dokterName: "justin",
-            tnggl: "09/19/2023",
-            content: "sakit kepala",
-        },
-        {
-            id: 2,
-            dokterName: "rudi",
-            tnggl: "09/10/2023",
-            content: "sakit gigi pak",
-        },
-        {
-            id: 3,
-            dokterName: "rudi",
-            tnggl: "09/10/2023",
-            content: "kesurupan pak",
-        },
-        {
-            id: 4,
-            dokterName: "rudi",
-            tnggl: "09/10/2023",
-            content: "lagi gx punya uang pak",
-        },
-    ];
+    console.log(appointments);
+
     return (
         <>
             <ul>
@@ -50,7 +20,7 @@ function ModalRecordUser() {
                     <div className="modal-box w-11/12 max-w-5xl">
                         <div className="tabs tabs-boxed w-full">
                             {/*  menu record by date ..... */}
-                            {recordSample.map((tab) => (
+                            {appointments.map((tab, index) => (
                                 <a
                                     key={tab.id}
                                     className={`tab ${
@@ -60,7 +30,7 @@ function ModalRecordUser() {
                                     } w-20 ml-5 hover:bg-primary-content`}
                                     onClick={() => setActiveTabs(tab.id)}
                                 >
-                                    {tab.id + 1}
+                                    {index + 1}
                                 </a>
                             ))}
                         </div>
@@ -72,7 +42,7 @@ function ModalRecordUser() {
                                     <input
                                         type="text"
                                         className="input input-bordered w-full bg-base-color mt-2 "
-                                        value={item.tnggl}
+                                        value={item.appointment_date}
                                         readOnly
                                     />
                                     {/* nama dokter */}
@@ -80,14 +50,14 @@ function ModalRecordUser() {
                                     <input
                                         type="text"
                                         className="input input-bordered w-full bg-base-color mt-2 "
-                                        value={item.dokterName}
+                                        value={item.doctor.user.name}
                                         readOnly
                                     />
                                     {/*  keterangan  */}
                                     <label className="p-2">Keterangan</label>
                                     <textarea
                                         className="textarea textarea-bordered bg-base-color textarea-lg w-full  "
-                                        value={item.content}
+                                        value={item.complaint}
                                         readOnly
                                     />
                                 </div>

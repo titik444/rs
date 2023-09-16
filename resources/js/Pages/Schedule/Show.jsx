@@ -6,7 +6,7 @@ import Dokter from "@/Components/CheckPage_Items/Dokter";
 import Footer from "@/Components/Footer";
 import { usePage } from "@inertiajs/react";
 
-export default function Show({ schedules }) {
+export default function Show({ schedules, appointments }) {
     const { auth } = usePage().props;
 
     return (
@@ -20,7 +20,7 @@ export default function Show({ schedules }) {
                 backgroundImage={DasboradImage}
             />
             {/* menu  */}
-            <MenuCheck />
+            <MenuCheck appointments={appointments} />
             {/* dokter card.... */}
             <Dokter schedules={schedules} />
             <Footer />

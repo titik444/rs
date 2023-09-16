@@ -16,7 +16,7 @@ return new class extends Migration
             $table->date('appointment_date');
             $table->time('appointment_time');
             $table->string('insurance');
-            $table->string('no_insurance');
+            $table->string('no_insurance')->nullable();
             $table->text('complaint');
             $table->timestamps();
             $table->softDeletes();

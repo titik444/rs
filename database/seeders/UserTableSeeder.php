@@ -31,5 +31,23 @@ class UserTableSeeder extends Seeder
             'updated_at'     => date('Y-m-d H:i:s'),
         ]);
         $doctor->assignRole('doctor');
+
+        $doctor = User::create([
+            'name'           => 'Dr. Indah Kusumaningrum',
+            'email'          => 'doctor2@test.com',
+            'password'       => Hash::make('doctor1234'),
+            'created_at'     => date('Y-m-d H:i:s'),
+            'updated_at'     => date('Y-m-d H:i:s'),
+        ]);
+        $doctor->assignRole('doctor');
+
+        $doctor = User::create([
+            'name'           => 'Dr. Tirta Mandira Hudhi',
+            'email'          => 'doctor3@test.com',
+            'password'       => Hash::make('doctor1234'),
+            'created_at'     => date('Y-m-d H:i:s'),
+            'updated_at'     => date('Y-m-d H:i:s'),
+        ]);
+        $doctor->assignRole('doctor');
     }
 }

@@ -32,6 +32,42 @@ class DoctorScheduleTableSeeder extends Seeder
                 'start_time' => '12:00',
                 'end_time' => '17:00',
             ],
+            [
+                'doctor_id' => 2,
+                'day' => 'Monday',
+                'start_time' => '09:00',
+                'end_time' => '17:00',
+            ],
+            [
+                'doctor_id' => 2,
+                'day' => 'Tuesday',
+                'start_time' => '09:00',
+                'end_time' => '12:00',
+            ],
+            [
+                'doctor_id' => 2,
+                'day' => 'Wednesday',
+                'start_time' => '12:00',
+                'end_time' => '17:00',
+            ],
+            [
+                'doctor_id' => 3,
+                'day' => 'Thursday',
+                'start_time' => '09:00',
+                'end_time' => '17:00',
+            ],
+            [
+                'doctor_id' => 3,
+                'day' => 'Friday',
+                'start_time' => '09:00',
+                'end_time' => '12:00',
+            ],
+            [
+                'doctor_id' => 3,
+                'day' => 'Saturday',
+                'start_time' => '12:00',
+                'end_time' => '17:00',
+            ],
         ]);
     }
 }
