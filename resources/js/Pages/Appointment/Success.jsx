@@ -25,7 +25,7 @@ export default function Success() {
                         please come to the clinic according to the appointment
                         time
                     </p>
-                    <Link href="/" as="button" className="btn mt-3 bg-base-color">
+                    <Link href="/schedule" as="button" className="btn mt-3 bg-base-color">
                         Home
                     </Link>
                     <h2 className="mt-[300px] italic  ">
