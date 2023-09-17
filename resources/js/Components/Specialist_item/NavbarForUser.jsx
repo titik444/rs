@@ -93,7 +93,7 @@ function NavbarForUser() {
 
                     {/* item card specialist.....*/}
                     {/* item komponen ------ LI  */}
-                    <li className="group  hover:scale-110">
+                    <li className="group  hover:scale-110 hover:cursor-pointer">
                         <a
                             onClick={() =>
                                 document
