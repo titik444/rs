@@ -12,7 +12,7 @@ function Specialist_Card({ specialists }) {
                     <h1 className="text-lg font-bold p-2 text-center md:text-xl">
                         Specialist{" "}
                     </h1>
-                    <div className="w-full h-auto p-3   z-0 md:flex md:flex-wrap md:justify-center">
+                    <div className="w-full h-auto p-3  md:flex md:flex-wrap md:justify-center">
                         {/* item card specialist.....*/}
                         {specialists.map((specialist) => (
                             <CardItem
@@ -21,6 +21,7 @@ function Specialist_Card({ specialists }) {
                                 text={specialist.description}
                                 image={`/images/specialist${specialist.id}.png`}
                                 link={`/schedule/${specialist.id}`}
+                                className="-z-100"
                             />
                         ))}
                         {/* akhir item card specialist .....*/}

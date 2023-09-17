@@ -62,7 +62,7 @@ export function Navbar() {
             <nav
                 ref={sidebarRef}
                 id="sidebar"
-                className="w-52 h-auto rounded-md fixed top-5  bg-white z-20 p-3 -right-[250px] lg:h-0 lg:left-[40%] lg:top-0"
+                className="w-52 h-auto rounded-md fixed top-5  bg-white z-20  p-3 -right-[250px] lg:h-0 lg:left-[40%] lg:top-0"
             >
                 <ul className="block lg:flex">
                     {/* item komponen ------ LI  */}
