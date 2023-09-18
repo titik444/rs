@@ -33,33 +33,75 @@ function Modal_Login(props) {
                     className="modal-box space-y-4 md:space-y-6"
                     onSubmit={submit}
                 >
+                    {/* ALERT SUCESS  ....................................*/}
+                    <div className="alert alert-success w-full">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="stroke-current shrink-0 h-6 w-6"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="2"
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                            />
+                        </svg>
+                        <span>selamat login anda berhasil </span>
+                    </div>
+                    {/* AKHIR ALERT SUCESS ........... */}
+
+                    {/*  AKHIR ALERT GAGAL   */}
+                    <div className="alert alert-error">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="stroke-current shrink-0 h-6 w-6"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="2"
+                                d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+                            />
+                        </svg>
+                        <span>Error! Task failed successfully.</span>
+                    </div>
+                    {/*  AKHIR ALERT GAGAL   */}
                     {/* close button modal */}
-                    <Link className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+                    <Link className="btn btn-sm btn-circle btn-ghost absolute right-6 top-2">
                         ✕
                     </Link>
                     {/* body modal  */}
 
                     <div>
+                        {/* login email................. */}
                         <label
                             htmlFor="email"
-                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            className="block mb-2 text-md font-bold text-gray-900 dark:text-white after:content-['*']
+                            after:text-pink-500 after:ml-0.5"
                         >
                             Your email
                         </label>
                         <input
                             type="email"
                             name="email"
+                            id="email"
                             value={data.email}
-                            className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            placeholder="Your@email.com..."
-                            required=""
+                            className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
+                            placeholder="your@email.com..."
+                            required
                             onChange={(e) => HandleChange(e)}
                         />
                     </div>
-                    <div>
+                    {/* login password  */}
+                    <div className="mb-10">
                         <label
                             htmlFor="password"
-                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            className="block mb-2 text-sm font-bold text-gray-900   after:content-['*']
+                            after:text-pink-500 after:ml-0.5"
                         >
                             Password
                         </label>
@@ -68,8 +110,9 @@ function Modal_Login(props) {
                             name="password"
                             value={data.password}
                             placeholder="••••••••"
-                            className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            required=""
+                            className="bg-gray-50 border border-gray-300  sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
+                            required
+                            minLength={5}
                             onChange={(e) => HandleChange(e)}
                         />
                     </div>
@@ -81,7 +124,7 @@ function Modal_Login(props) {
                                     value={data.remember}
                                     aria-describedby="remember"
                                     type="checkbox"
-                                    className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
+                                    className="w-4 h-4 border border-gray-300 rounded bg-gray-500 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
                                     required=""
                                     onChange={(e) => HandleChange(e)}
                                 />

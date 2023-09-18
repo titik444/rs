@@ -2,7 +2,7 @@ import React from "react";
 import logo1 from "@/images/Stethoscope.png";
 import logo2 from "@/images/Health checkup.png";
 import ModalRecordUser from "./ModalRecordUser";
-function MenuCheck({appointments}) {
+function MenuCheck({ appointments }) {
     const scrollToTarget = () => {
         const targetElement = document.getElementById("targetElementId");
         if (targetElement) {
@@ -13,7 +13,7 @@ function MenuCheck({appointments}) {
         <>
             <ModalRecordUser appointments={appointments} />
             <h1 className="text-lg font-bold p-2 text-center md:text-xl">
-                About Us
+                Our Service
             </h1>
             <div className="w-full flex justify-evenly h-auto p-5 md:mt-5">
                 {/* title */}

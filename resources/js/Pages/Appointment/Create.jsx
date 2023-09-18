@@ -72,6 +72,9 @@ export default function Create({ patient, schedule }) {
                         setData("appointment_time", e.target.value)
                     }
                 />
+                <p class="mt-2 visible text-pink-600 text-sm">
+                    adjust your attendance to the doctor's operational
+                </p>
 
                 {/* status BPJS  */}
                 <div className=" w-full mt-3 flex justify-evenly">
