@@ -15,7 +15,7 @@ function Specialist_Card({ SpecialistName, text, image, link }) {
                         <p>{text}</p>
                         <div className="card-actions justify-center">
                             <Link href={link} className="btn btn-primary">
-                                Periksa
+                                Check
                             </Link>
                         </div>
                     </div>

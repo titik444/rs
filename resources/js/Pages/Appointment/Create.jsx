@@ -56,25 +56,41 @@ export default function Create({ patient, schedule }) {
                 </label>
                 <input
                     type="date"
-                    className="input w-full bg-base-color mt-3"
+                    className={`input w-full bg-base-color mt-3 ${
+                        errors.appointment_date
+                            ? "border-pink-500 focus:border-pink-500 focus:ring-pink-500"
+                            : "border-gray-300 focus:ring-primary-600 focus:border-primary-600"
+                    }`}
                     onChange={(e) =>
                         setData("appointment_date", e.target.value)
                     }
                 />
+                {errors.appointment_date && (
+                    <p className="mt-1 text-pink-600 text-xs">
+                        {errors.appointment_date}
+                    </p>
+                )}
+
                 {/* waktu ..... */}
                 <label htmlFor="">
                     <span className="label-text ">Check Time</span>
                 </label>
                 <input
                     type="time"
-                    className="input w-full bg-base-color mt-3"
+                    className={`input w-full bg-base-color mt-3 ${
+                        errors.appointment_time
+                            ? "border-pink-500 focus:border-pink-500 focus:ring-pink-500"
+                            : "border-gray-300 focus:ring-primary-600 focus:border-primary-600"
+                    }`}
                     onChange={(e) =>
                         setData("appointment_time", e.target.value)
                     }
                 />
-                <p class="mt-2 visible text-pink-600 text-sm">
-                    adjust your attendance to the doctor's operational
-                </p>
+                {errors.appointment_time && (
+                    <p className="mt-1 text-pink-600 text-xs">
+                        {errors.appointment_time}
+                    </p>
+                )}
 
                 {/* status BPJS  */}
                 <div className=" w-full mt-3 flex justify-evenly">
@@ -119,9 +135,18 @@ export default function Create({ patient, schedule }) {
                 {/* md */}
                 <textarea
                     placeholder="complaint ..."
-                    className="textarea textarea-bordered textarea-md h-52 w-full  bg-base-color mt-3 "
+                    className={`textarea textarea-bordered textarea-md h-52 w-full  bg-base-color mt-3 ${
+                        errors.complaint
+                            ? "border-pink-500 focus:border-pink-500 focus:ring-pink-500"
+                            : "border-gray-300 focus:ring-primary-600 focus:border-primary-600"
+                    }`}
                     onChange={(e) => setData("complaint", e.target.value)}
                 />
+                {errors.complaint && (
+                    <p className="mt-1 text-pink-600 text-xs">
+                        {errors.complaint}
+                    </p>
+                )}
                 {/* button */}
                 <div className="w-full  b mt-5 flex ">
                     <button
@@ -134,7 +159,7 @@ export default function Create({ patient, schedule }) {
                 </div>
                 {/* footer  */}
             </form>
-            {Object.values(errors).length > 0 && Object.values(errors)[0]}
+
             <Footer />
         </>
     );

@@ -11,8 +11,6 @@ function ModalRecordUser({ appointments }) {
         }
     }, [activeTabs]);
 
-    console.log(appointments);
-
     return (
         <>
             <ul>

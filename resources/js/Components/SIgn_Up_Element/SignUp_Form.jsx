@@ -32,19 +32,24 @@ function SignUp_Form({ data, errors, submit, handleChange, processing }) {
                                     Name
                                 </label>
                                 <input
-                                    required
                                     type="text"
                                     name="name"
                                     value={data.name}
                                     onChange={(e) => handleChange(e)}
                                     id="name "
-                                    className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5  invalid:border-pink-500 invalid:focus:ring-pink-500 invalid:text-pink-500 peer"
-                                    placeholder="username ......"
-                                    minLength={3}
+                                    className={`g-gray-50 border text-gray-900 sm:text-sm rounded-lg block w-full p-2.5 ${
+                                        errors.name
+                                            ? "border-pink-500 focus:border-pink-500 focus:ring-pink-500"
+                                            : "border-gray-300 focus:ring-primary-600 focus:border-primary-600"
+                                    }`}
+                                    placeholder="name ......"
                                 />
-                                <p class="mt-1 invisible peer-invalid:visible text-pink-600 text-xs">
-                                    please fill more then 3 character ...
-                                </p>
+
+                                {errors.name && (
+                                    <p className="mt-1 text-pink-600 text-xs">
+                                        {errors.name}
+                                    </p>
+                                )}
                             </div>
                             <div>
                                 {/* akhir username  */}
@@ -64,12 +69,18 @@ function SignUp_Form({ data, errors, submit, handleChange, processing }) {
                                     onChange={(e) => handleChange(e)}
                                     id="email"
                                     placeholder="your email ......"
-                                    className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg  block w-full p-2.5 invalid:border-pink-500 invalid:focus:ring-pink-500 invalid:text-pink-500 peer "
-                                    required
+                                    className={`bg-gray-50 border text-gray-900 sm:text-sm rounded-lg block w-full p-2.5 ${
+                                        errors.email
+                                            ? "border-pink-500 focus:border-pink-500 focus:ring-pink-500"
+                                            : "border-gray-300 focus:ring-primary-600 focus:border-primary-600"
+                                    }`}
                                 />
-                                <p class="mt-1 invisible peer-invalid:visible text-pink-600 text-xs">
-                                    Please provide a valid email address.
-                                </p>
+
+                                {errors.email && (
+                                    <p className="mt-1 text-pink-600 text-xs">
+                                        {errors.email}
+                                    </p>
+                                )}
                             </div>
                             {/* akhir email ...... */}
 
@@ -88,14 +99,19 @@ function SignUp_Form({ data, errors, submit, handleChange, processing }) {
                                     value={data.nik}
                                     onChange={(e) => handleChange(e)}
                                     id="NIK"
-                                    required
-                                    minlength={16}
                                     placeholder="nik number ......."
-                                    className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 invalid:border-pink-500 invalid:focus:ring-pink-500 invalid:text-pink-500 peer "
+                                    className={`bg-gray-50 border text-gray-900 sm:text-sm rounded-lg block w-full p-2.5 ${
+                                        errors.nik
+                                            ? "border-pink-500 focus:border-pink-500 focus:ring-pink-500"
+                                            : "border-gray-300 focus:ring-primary-600 focus:border-primary-600"
+                                    }`}
                                 />
-                                <p class="mt-2 invisible peer-invalid:visible text-pink-600 text-sm">
-                                    number must on the 16 digit's
-                                </p>
+
+                                {errors.nik && (
+                                    <p className="mt-1 text-pink-600 text-xs">
+                                        {errors.nik}
+                                    </p>
+                                )}
                             </div>
                             {/* akhir NIK ....... */}
                             {/* NO hp ...... */}
@@ -107,19 +123,24 @@ function SignUp_Form({ data, errors, submit, handleChange, processing }) {
                                     Number Phone
                                 </label>
                                 <input
-                                    required
                                     type="text"
                                     name="phone"
                                     value={data.phone}
                                     onChange={(e) => handleChange(e)}
                                     id="phone"
-                                    minLength={12}
                                     placeholder=" no.telephone ....."
-                                    className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 invalid:border-pink-500 invalid:focus:ring-pink-500 invalid:text-pink-500 peer"
+                                    className={`bg-gray-50 border text-gray-900 sm:text-sm rounded-lg block w-full p-2.5 ${
+                                        errors.phone
+                                            ? "border-pink-500 focus:border-pink-500 focus:ring-pink-500"
+                                            : "border-gray-300 focus:ring-primary-600 focus:border-primary-600"
+                                    }`}
                                 />
-                                <p class="mt-2 invisible peer-invalid:visible text-pink-600 text-sm">
-                                    fill must in 12 character
-                                </p>
+
+                                {errors.phone && (
+                                    <p className="mt-1 text-pink-600 text-xs">
+                                        {errors.phone}
+                                    </p>
+                                )}
                             </div>
                             {/* akhir NO Hp ...... */}
 
@@ -132,19 +153,24 @@ function SignUp_Form({ data, errors, submit, handleChange, processing }) {
                                     Create Password
                                 </label>
                                 <input
-                                    required
                                     type="password"
                                     name="password"
                                     value={data.password}
                                     onChange={(e) => handleChange(e)}
                                     id="password"
-                                    minLength={5}
                                     placeholder="new password ....."
-                                    className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 invalid:border-pink-500 invalid:focus:ring-pink-500 invalid:text-pink-500 peer"
+                                    className={`bg-gray-50 border text-gray-900 sm:text-sm rounded-lg block w-full p-2.5 ${
+                                        errors.password
+                                            ? "border-pink-500 focus:border-pink-500 focus:ring-pink-500"
+                                            : "border-gray-300 focus:ring-primary-600 focus:border-primary-600"
+                                    }`}
                                 />
-                                <p class="mt-2 invisible peer-invalid:visible text-pink-600 text-sm">
-                                    Password must more then 5 character
-                                </p>
+
+                                {errors.password && (
+                                    <p className="mt-1 text-pink-600 text-xs">
+                                        {errors.password}
+                                    </p>
+                                )}
                             </div>
                             {/* akhir password  */}
                             {/* veririfkasi password  */}
@@ -156,19 +182,24 @@ function SignUp_Form({ data, errors, submit, handleChange, processing }) {
                                     Password Confirmation
                                 </label>
                                 <input
-                                    required
                                     type="password"
-                                    minLength={5}
                                     name="password_confirmation"
                                     value={data.password_confirmation}
                                     onChange={(e) => handleChange(e)}
                                     id="password_confirmation"
                                     placeholder="password confirmation ....."
-                                    className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 invalid:border-pink-500 invalid:focus:ring-pink-500 invalid:text-pink-500 peer "
+                                    className={`bg-gray-50 border text-gray-900 sm:text-sm rounded-lg block w-full p-2.5 ${
+                                        errors.password_confirmation
+                                            ? "border-pink-500 focus:border-pink-500 focus:ring-pink-500"
+                                            : "border-gray-300 focus:ring-primary-600 focus:border-primary-600"
+                                    }`}
                                 />
-                                <p class="mt-2 invisible peer-invalid:visible text-pink-600 text-sm">
-                                    Password must more then 5 character
-                                </p>
+
+                                {errors.password_confirmation && (
+                                    <p className="mt-1 text-pink-600 text-xs">
+                                        {errors.password_confirmation}
+                                    </p>
+                                )}
                             </div>
 
                             {/* akhir verifikasi password */}
@@ -218,9 +249,6 @@ function SignUp_Form({ data, errors, submit, handleChange, processing }) {
                                     Login here
                                 </Link>
                             </p>
-
-                            {Object.values(errors).length > 0 &&
-                                Object.values(errors)[0]}
                         </form>
                     </div>
                 </div>

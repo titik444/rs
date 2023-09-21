@@ -1,7 +1,7 @@
-import { useForm } from "@inertiajs/react";
+import { useForm, usePage } from "@inertiajs/react";
 import { useState } from "react";
 
-function Form_Guess({ flashMessage }) {
+function Form_Guess() {
     const form = useForm({
         name: "",
         email: "",
@@ -9,6 +9,10 @@ function Form_Guess({ flashMessage }) {
         message: "",
         rating: 5,
     });
+
+    const errors = form.errors;
+
+    const { flashMessage } = usePage().props;
 
     const [data, setData] = useState({});
 
@@ -44,6 +48,25 @@ function Form_Guess({ flashMessage }) {
                     onSubmit={onHandleSubmit}
                     className="md:w-[80%] md:m-auto"
                 >
+                    {flashMessage?.message && (
+                        <div className="alert alert-success w-full">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="stroke-current shrink-0 h-6 w-6"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                                />
+                            </svg>
+                            <span>{flashMessage.message}</span>
+                        </div>
+                    )}
+
                     {/* input your name ...... */}
                     <input
                         type="text"
@@ -51,23 +74,45 @@ function Form_Guess({ flashMessage }) {
                         value={data.name}
                         onChange={(e) => onHandleChange(e)}
                         placeholder="Your name ......"
-                        className="input input-ghost bg-white w-full h-10"
+                        className={`input input-ghost bg-white w-full h-10 mt-3 ${
+                            errors.name
+                                ? "border-pink-500 focus:border-pink-500 focus:ring-pink-500"
+                                : "border-gray-300 focus:ring-primary-600 focus:border-primary-600"
+                        }`}
                     />
                     {/* input your email ...... */}
+
+                    {errors.name && (
+                        <p class="mt-1 text-pink-600 text-xs">{errors.name}</p>
+                    )}
+
                     <input
                         type="email"
                         name="email"
                         value={data.email}
                         onChange={(e) => onHandleChange(e)}
                         placeholder="Your Email ......"
-                        className="input input-ghost bg-white w-full h-10 mt-3"
+                        className={`input input-ghost bg-white w-full h-10 mt-3 ${
+                            errors.email
+                                ? "border-pink-500 focus:border-pink-500 focus:ring-pink-500"
+                                : "border-gray-300 focus:ring-primary-600 focus:border-primary-600"
+                        }`}
                     />
                     {/* input category comment */}
+
+                    {errors.email && (
+                        <p class="mt-1 text-pink-600 text-xs">{errors.email}</p>
+                    )}
+
                     <select
                         name="category"
                         value={data.category}
                         onChange={(e) => onHandleChange(e)}
-                        className="select select-ghost bg-white w-full h-10 mt-3"
+                        className={`select select-ghost bg-white w-full h-10 mt-3 ${
+                            errors.category
+                                ? "border-pink-500 focus:border-pink-500 focus:ring-pink-500"
+                                : "border-gray-300 focus:ring-primary-600 focus:border-primary-600"
+                        }`}
                         defaultValue={"default"}
                     >
                         <option value="default" disabled>
@@ -77,6 +122,13 @@ function Form_Guess({ flashMessage }) {
                         <option value="Proficiency">Proficiency</option>
                         <option value="Cleanliness">Cleanliness</option>
                     </select>
+
+                    {errors.category && (
+                        <p class="mt-1 text-pink-600 text-xs">
+                            {errors.category}
+                        </p>
+                    )}
+
                     {/* give Rating */}
                     <div className="flex justify-evenly mt-2">
                         <h1 className="font-thin italic text-sm font-montserrat mt-2">
@@ -104,9 +156,20 @@ function Form_Guess({ flashMessage }) {
                         name="message"
                         value={data.message}
                         onChange={(e) => onHandleChange(e)}
-                        placeholder="Bio"
-                        className="textarea textarea-bordered textarea-lg w-full h-40 mt-3 "
-                    ></textarea>
+                        placeholder="Message ......"
+                        className={`textarea textarea-bordered textarea-lg w-full h-40 mt-3 ${
+                            errors.message
+                                ? "border-pink-500 focus:border-pink-500 focus:ring-pink-500"
+                                : "border-gray-300 focus:ring-primary-600 focus:border-primary-600"
+                        }`}
+                    />
+
+                    {errors.message && (
+                        <p class="mt-1 text-pink-600 text-xs">
+                            {errors.message}
+                        </p>
+                    )}
+
                     {/* button submit */}
                     <div className="w-full  b mt-5 flex ">
                         <button
@@ -116,13 +179,6 @@ function Form_Guess({ flashMessage }) {
                             Submit
                         </button>
                     </div>
-
-                    {/* pesan error */}
-                    {Object.values(form.errors).length > 0 &&
-                        Object.values(form.errors)[0]}
-
-                    {/* pesan success */}
-                    {flashMessage?.message && <h1>{flashMessage.message}</h1>}
                 </form>
             </div>
         </>

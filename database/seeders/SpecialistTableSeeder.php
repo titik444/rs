@@ -15,16 +15,16 @@ class SpecialistTableSeeder extends Seeder
     {
         Specialist::insert([
             [
-                'name' => 'Dokter Umum',
-                'description' => 'Dokter Umum',
+                'name' => 'General Practitioner',
+                'description' => 'General Practitioner',
                 'image' => 'https://source.unsplash.com/500x500?medical',
             ], [
-                'name' => 'Dokter Gigi',
-                'description' => 'Dokter Gigi',
+                'name' => 'Dentist',
+                'description' => 'Dentist',
                 'image' => 'https://source.unsplash.com/500x500?medical',
             ], [
-                'name' => 'Kandungan & Kebidanan',
-                'description' => 'Kandungan & Kebidanan',
+                'name' => 'Obstetrics & Gynecology',
+                'description' => 'Obstetrics & Gynecology',
                 'image' => 'https://source.unsplash.com/500x500?medical',
             ]
         ]);

@@ -34,7 +34,14 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        // return redirect()->intended(RouteServiceProvider::HOME);
+
+        return redirect()->route('home.index')->with(
+            [
+                'message' => 'Congratulations, you have successfully logged in.',
+                'type' => 'success'
+            ]
+        );
     }
 
     /**

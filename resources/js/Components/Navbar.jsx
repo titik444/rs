@@ -5,6 +5,7 @@ import { AiFillHome } from "react-icons/ai";
 import { FaBriefcaseMedical } from "react-icons/fa";
 import { AiFillInfoCircle } from "react-icons/ai";
 import { BsTranslate, BsFillChatSquareDotsFill } from "react-icons/bs";
+import { Link } from "@inertiajs/react";
 
 export function Navbar() {
     const [sidebarAktif, setSidebarAktif] = useState(false);
@@ -147,12 +148,15 @@ export function Navbar() {
                             document.getElementById("modal_login").showModal()
                         }
                     >
-                        <a className="text-base text-dark py-2 mx-8 flex">
+                        <Link
+                            onClick={(e) => e.preventDefault()}
+                            className="text-base text-dark py-2 mx-8 flex"
+                        >
                             {/* teks */}
                             <h2 className="pl-5 font-bold text-lg text-blue-500 ">
                                 Login
                             </h2>
-                        </a>
+                        </Link>
                     </li>
                     {/* akhir  item komponen ------ LI  */}
                 </ul>
