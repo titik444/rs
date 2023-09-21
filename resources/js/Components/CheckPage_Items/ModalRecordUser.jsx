@@ -44,7 +44,7 @@ function ModalRecordUser({ appointments }) {
                                         readOnly
                                     />
                                     {/* nama dokter */}
-                                    <label className="p-2">Dokter Name</label>
+                                    <label className="p-2">Doctor's name</label>
                                     <input
                                         type="text"
                                         className="input input-bordered w-full bg-base-color mt-2 "
@@ -52,7 +52,7 @@ function ModalRecordUser({ appointments }) {
                                         readOnly
                                     />
                                     {/*  keterangan  */}
-                                    <label className="p-2">Keterangan</label>
+                                    <label className="p-2">information</label>
                                     <textarea
                                         className="textarea textarea-bordered bg-base-color textarea-lg w-full  "
                                         value={item.complaint}
