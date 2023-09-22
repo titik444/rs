@@ -1,5 +1,4 @@
 import React from "react";
-import imageCard from "@/images/specialist.png";
 import { Link } from "@inertiajs/react";
 function Specialist_Card({ SpecialistName, text, image, link }) {
     return (
