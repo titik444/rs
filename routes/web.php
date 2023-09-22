@@ -1,9 +1,6 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,23 +13,19 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
+require __DIR__ . '/auth.php';
+
+Route::namespace('App\Http\Controllers')->group(function () {
+
+    Route::get('/', 'HomeController@index')->name('home.index');
+    Route::post('/', 'HomeController@store')->name('feedback.store');
+
+    Route::middleware('auth')->group(function () {
+        Route::get('/schedule', 'ScheduleController@index')->name('schedule.index');
+        Route::get('/schedule/{id}', 'ScheduleController@show')->name('schedule.show');
+
+        Route::get('/appointment/create/{id}', 'AppointmentController@create')->name('appointment.create');
+        Route::post('/appointment', 'AppointmentController@store')->name('appointment.store');
+        Route::get('/appointment/success', 'AppointmentController@success')->name('appointment.success');
+    });
 });
-
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
-
-require __DIR__.'/auth.php';
