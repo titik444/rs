@@ -1,5 +1,4 @@
 import React from "react";
-import imageCard from "@/images/specialist.png";
 import CardItem from "@/Components/Specialist_item/CardItem";
 import Footer from "../Footer";
 function Specialist_Card({ specialists }) {
